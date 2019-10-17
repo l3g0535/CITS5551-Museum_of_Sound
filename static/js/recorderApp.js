@@ -64,7 +64,6 @@ function threeMinDisplay() {
 function startRecording() {
 
   if (recordButton.innerText == "Record") {
-    console.log("1")
     recordButton.innerText = "Stop";
   }
   else {
