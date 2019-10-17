@@ -1,0 +1,8 @@
+Uploading large files - migrate to jquery file upload
+Sound uploader uploads all sounds recorded during one session, rather than just most recent done x
+Implement pre-delete on files x
+Media file paths are incorrect x
+Update css paths x
+make upload inhereit from base x
+upload sounds
+fb integration
