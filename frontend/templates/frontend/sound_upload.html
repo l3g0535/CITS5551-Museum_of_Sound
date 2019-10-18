@@ -1,0 +1,27 @@
+
+{% extends 'frontend/user_interaction.html' %}
+
+{% load static %}
+{% block title %} Upload a Sound {% endblock %}
+{% block form %}
+<div class="description text-center">
+<label for="desc">
+        <form method="POST" enctype="multipart/form-data" class="upload-form">{% csrf_token %}
+
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="desc" class="bmd-label-static">Description (max. 255 characters)</label>
+                  <textarea type="text" class="form-control" maxlength="255" required id="id_description" rows="3" name = "description" cols="100"></textarea>
+            </div>
+            <br>
+            {{ form.audio_file }}
+
+            <br>
+            <br>
+
+            <button type="submit" class="save btn btn-default">Submit file</button>
+
+        </form></label>
+
+{% endblock %}

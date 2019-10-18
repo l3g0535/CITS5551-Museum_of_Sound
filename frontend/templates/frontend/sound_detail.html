@@ -1,0 +1,14 @@
+{% extends 'frontend/browse.html' %}
+
+{% block content %}
+    <div class="sound">
+      <h1>{{ sound.description }}</h1>
+      <p>{{ sound.audio_file_player }}</p>
+      <p> Tags:
+      {% for tago in sound.tags %}
+          <a href="{% url 'tag' tag=tago %}">{{ tago }}</a>
+      {% endfor %}
+    </p>
+      <p>Uploaded: {{ sound.upload_time }}</p>
+    </div>
+{% endblock %}

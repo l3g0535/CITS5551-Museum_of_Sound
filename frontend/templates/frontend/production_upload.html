@@ -1,0 +1,31 @@
+
+{% extends 'frontend/user_interaction.html' %}
+
+{% load static %}
+
+{% block title %} Upload a Production {% endblock %}
+{% block form %}
+<div class="description text-center">
+<label for="desc">
+        <form method="POST" enctype="multipart/form-data" class="upload-form">{% csrf_token %}
+        
+        <div class="col">
+            <div class="form-group">
+                <label for="id_prod_title" class="bmd-label-static">Production Title</label>
+                <input type="text" class="form-control" id="id_prod_title" name="prod_title">
+            </div>
+            <div class="form-group">
+                <label for="id_prod_description" class="bmd-label-static">Production Description</label>
+                <textarea type="text" class="form-control" maxlength="255" id="id_prod_description" name="prod_description" rows="3" cols="100"></textarea>
+            </div>
+                {{ form.audio_file }}
+            <button type="submit" class="save btn btn-default">Upload</button>
+        </div>
+        
+            
+        </div>
+            
+        
+        </form>
+</label></div>
+{% endblock %}

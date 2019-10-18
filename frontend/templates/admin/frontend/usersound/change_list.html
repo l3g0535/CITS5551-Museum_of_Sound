@@ -1,0 +1,12 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_static %}
+
+{% block object-tools-items %}
+{{ block.super }}
+<li>
+    <a href="{% url 'download' %}" class="btn btn-high btn-success">Import from Facebook</a>
+</li>
+<li>
+    <a href="{% url 'tagging' %}" class="btn btn-high btn-success">Tag Sounds</a>
+</li>
+{% endblock %}

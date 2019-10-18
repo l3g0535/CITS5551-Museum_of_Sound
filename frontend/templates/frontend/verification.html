@@ -1,0 +1,15 @@
+{% extends 'frontend/user_interaction.html' %}
+
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+{% block form %}
+  <div class="description text-center">
+    Thanks, {{ username }} here's your upload:
+  </div>
+
+  <div class="description text-center">
+    {{ production.audio_file_player }}
+  </div>
+
+
+{% endblock %}

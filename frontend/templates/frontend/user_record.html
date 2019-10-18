@@ -1,0 +1,79 @@
+{% extends 'frontend/user_interaction.html' %}
+{% load static %}
+{% block title %}Record New Sound{% endblock %}
+
+{% block form %}
+        <!--Recording Buttons-->
+        <!-- <div class="description text-center">
+          <p style="padding-right: 15px; padding-left: 15px; text-align: justify;">By sending a recording, you acknowledge that this recording is your own work and, as the copyright holder of this work, you irrevocably grant anyone the right to use this work under the Creative Commons Attribution 4.0. (<a href="https://creativecommons.org/licenses/by/4.0/legalcode">legal code</a>)</p>
+        </div> -->
+
+        <div class="row">
+
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="profile-tabs">
+                <div class="text-center">
+                    <font color="red" size="+2"><p></p><div id="Recording"></div></p></font>
+                </div>
+              <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+                <div id="controls">
+
+                  <button class="btn btn-primary" id='recordButton'>Record</button>
+                  <button class="btn btn-primary" id='stopButton'>Stop</button>
+                  <button class="btn btn-primary" id='sendButton'>Send</button>
+
+                  <div class="text-center">
+                        <div id="countdown"></div>
+                      <div id = "userrecord"></div>
+                      </div>
+                    <div class="form-group">
+                      <label for="title">Title</label>
+                      <textarea class="form-control" id="title" rows="1" maxlength="25"></textarea>
+
+                      <label for="desc">Description</label>
+                      <textarea class="form-control" id="desc" rows="3" maxlength="100"></textarea>
+
+                      <label for="tags">Tags</label>
+                      <textarea class="form-control" id="tags" rows="1" maxlength="50"></textarea>
+                    </div>
+<!--                   <button class="btn btn-light" id='loadDesc'>load description</button>   -->
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="description text-center">
+          <p style="padding-right: 15px; padding-left: 15px; text-align: justify;">What sounds are around you every day that shape your life? What sounds are rare or are likely to be lost or forgotten by future generations? Record them, tell us why they are meaningful to you, and deposit them in the Museum of Sound!
+          </p>
+          <p style="padding-right: 15px; padding-left: 15px; text-align: justify;">Use the buttons below to start recording your sound. Your sound may be up to 3 minutes long. At any time up to the 3 minute mark, you may simply stop the recording by pressing the 'stop recording' button. Your sound will then be able for you to play back before it is sent to our servers :)
+          </p>
+          <p style="padding-right: 15px; padding-left: 15px; text-align: justify;">By sending a recording, you acknowledge that this recording is your own work and, as the copyright holder of this work, you irrevocably grant anyone the right to use this work under the Creative Commons Attribution 4.0. (<a href="https://creativecommons.org/licenses/by/4.0/legalcode">legal code</a>)</p>
+        </div>
+        <br>
+
+        <div class="text-center" id="needdesc" style="color:red; padding-right: 15px; padding-left: 15px; text-align: justify;"></div>
+        <br>
+
+
+
+
+        <!--Audio Recorder & Controls-->
+        <div class="tab-content tab-space" style="padding-left: 15px; padding-right: 15px;">
+          <div class="tab-pane active text-center gallery" id="recording_studio" style="padding-bottom: 0px;">
+            <div class="row">
+              <div class="col-md-3 ml-auto">
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+  <script src="{% static 'js/recorder.js' %}"></script>
+  <script src="{% static 'js/recorderApp.js' %}"></script>
+  <script src="{% static 'js/plugins/js.cookie.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'frontend/browse.html' %}
+{% block content %}
+
+<hr width="80%">
+    {% for sound in sounds %}
+    <div class="sound" style="margin-left: 20px; margin-right: 20px;">
+        <br>
+        <h3>
+            <a href="{% url 'sound_detail' pk=sound.pk %}">{{ sound.description }}</a></h3>
+        <p>{{ sound.audio_file_player }}</p>
+        <p>published: {{ sound.upload_time }}</p>
+        <br>
+
+        <hr width="80%">
+
+    </div>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if sounds.has_previous %}
+            <a href="?page=1" class="page-link">&laquo; first</a>
+            <a href="?page={{ sounds.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ sounds.number }} of {{ sounds.paginator.num_pages }}.
+        </span>
+
+        {% if sounds.has_next %}
+            <a href="?page={{ sounds.next_page_number }}">next</a>
+            <a href="?page={{ sounds.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

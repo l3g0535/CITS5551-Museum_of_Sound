@@ -1,0 +1,24 @@
+
+{% extends 'frontend/base.html' %}
+{% block format %}
+{% load static %}
+
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url({%  static 'images/bg3.jpg' %});"></div>
+  <div class="main main-raised">
+    <div class="profile-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="profile">
+              <div class="avatar">
+                <img src="{% static 'images/icons/icon-user-default.png' %}" class="img-raised rounded-circle img-fluid">
+              </div>
+              <div class="name">
+                <h3 class="title">{% block title %}{% endblock %}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% block form %}{% endblock %}
+      </div></div></div>
+{% endblock %}
