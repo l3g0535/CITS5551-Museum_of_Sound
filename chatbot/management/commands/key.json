@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "museum-of-sounds-1538873776754",
+  "private_key_id": "894bda8ac677ce7757b51b85cbd6e686f1a1be16",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDmx4ZuduS8yawH\nfb6lCQaae68YMydBzP2LVVypF5NGXKu/uXx/MbJIvP2I95bDwmfybPYNNbwBUfuh\nkrN2BTBVSP3bGD5MsSe8zYqUUOONMRWJq+4PdN/+eXeDX7gmV0fPsIMt2EMTJ9NW\nRvOSobah2XiH56RS3HfZ7R/Z7EH+mN9KXvz8F5IiHHRbgPvuldPV3Z1Vy3rMOonv\njtw0yQT+Quqvnms1kROGbffU86xXuZ38AMEyciR0ERvtFPkiN0dZ81++4lxpG9YT\nRM1Z7ymmYfArcfjPR6DMF7G8grjl+Kos5EAYlXk6gK+MJC4jjxVaoqYlR2uMou5X\nvvSX2UHdAgMBAAECggEABgnK7el89yaUsnZ7DkDj9BdP38N437sgGCzx2XfFMfZb\nRQ8yn3ZaqpYNUS/fOTyFMT3iGzrgci1lttbKjMg6eUTJZZnnCWUqO8GqAlLyfT9/\nR4Sg3DUr5jHh62VOAWzPs3K0H/c0XBQy7qM5HMlP6MCyq2WnckaT+Tb/2hkZKfLj\nyyVV1Ldjo2iWdEZxwH5P8tTocleEWDmbu+bW0FgenQzLMUXXhyzLlZhQ9Mu5vNEO\nXtbuk2jNxhqBPmcj0LVj77B8//UEGygonykw695itZ0e1lm6Towy0ycU210k9ef1\nF3/AohhXyvXQIixLTqMHlMk4u5/b5YGq1vHOYJEFcQKBgQD+evi5zqICBBeVq6in\nkD6IhB988tNgfa0ZdFaKBNUk6DpuURdQqXcqtSbESGmvVLYkHkom49F277qIglLX\nkxol+zBRFx12ybsoOsjG3wMaWD0VtA2ng0gO6vx2jy92ZdEomdjSV+fQr6yqm9RI\nmM51DsiJDZOwh+riy6Oy2oq68QKBgQDoKFJMRtfubQkuunXBP+m4zd0jTD6nNAXQ\nGhgUNBFxD71H2HUkxXTAth8lWXQmNddej6ASeWsEWDfFCIp8pnwYqXT8cyQZXTON\nEMIuQf7ld0yvQBtApZxPIVqHqRa/afWRZ+wYRJUKsccg+HWYl4EIO09X0zNCyHg+\n0Azga2W9rQKBgQDi0F/X3B/xhAwxTmpnztyteHVIPHXBzsH1qgdnxJ7k4kcSBByv\nvBuGaSdAUvo/V1VwI78bonoTc9/hw6ZqlaX8rEGIRP3x3iN928cP2b0+Qd9P9Mcm\nwo/7G94hHcXD1UPy2Ay0jb0D91ACUBmJCwkYtDBwVzWHZd0ofzBMPRThQQKBgCY6\nvZKh99zjR6fSPKHeDHbKL6goXgjaoDpskZqCGH0twlWaZ2/utBMn6mkUGfRQ2W5Q\n6GMia2UDwetIRMXSBI1rGkCYFVG3701DfTZw17ChvJb/T32Nx/ef3nCIf551rGKN\nYmt8n65rKAdd4r+F81GPsrkbpk1RBbwSNoyeItrhAoGASfkCv/ByaCvXOvHqkQvS\n5F+W0f2SjvvZ4GiIWZtRk7xYj30sTIM2OPQHHrnnvfLpd4NDGDEYhE9514Vztvdr\nAJIGK8feSVMAZV3Endp4E/T63k3kryIjqbhAwGiX2lZpLiuroDDrKypfJARez8jl\nkADC5mRqPJkKUHAxvpBlWoI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "starting-account-b8b41mef0wfd@museum-of-sounds-1538873776754.iam.gserviceaccount.com",
+  "client_id": "116305805437912080265",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/starting-account-b8b41mef0wfd%40museum-of-sounds-1538873776754.iam.gserviceaccount.com"
+}
