@@ -3,25 +3,25 @@ from dotenv import load_dotenv
 from os.path import join, dirname
 
 
-
-#Needed to import API authentication codes from .env in root directory.
+# Needed to import API authentication codes from .env in root directory.
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-#Redirect URLs for authentication
+# Redirect URLs for authentication
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-#DEVELOPMENT SETTINGS
+# DEVELOPMENT SETTINGS
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '!(q6v&qi3-w-ktcqx_vaf6b4*#lh46u07+6+-41$0vqc9y$#$e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['http', 'sounds.arts.uwa.edu.au', '130.95.5.104', 'localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['http', 'sounds.arts.uwa.edu.au',
+                 '130.95.5.104', 'localhost', '127.0.0.1', '[::1]']
 
 
 # Application definition
@@ -78,8 +78,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
         'NAME': 'mysql',
-        'PASSWORD': 'a',
-        'USER': 'a',
+        'PASSWORD': 'asdasd123',
+        'USER': 'root',
     }
 }
 
@@ -123,13 +123,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 
 STATICFILES_DIRS = (
-   os.path.join(BASE_DIR, 'frontend/static'),
+    os.path.join(BASE_DIR, 'frontend/static'),
 )
 
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
 
-#AWS is used to serve the media and static files for better performance.
+# AWS is used to serve the media and static files for better performance.
 """
 AWS_DEFAULT_ACL = 'public-read'
 AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
