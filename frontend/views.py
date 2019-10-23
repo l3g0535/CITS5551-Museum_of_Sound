@@ -173,6 +173,10 @@ def signup(request):
     return render(request, 'frontend/signup-page.html')
 
 
+def help(request):
+    return render(request, 'frontend/aboutus.html')
+
+
 @login_required
 def download(request):
     management.call_command('download_to_local')

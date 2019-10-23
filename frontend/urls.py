@@ -27,5 +27,9 @@ urlpatterns = [
     path('admin/download', views.download, name='download'),
     path('admin/tagging', views.tagging, name='tagging'),
     path('login', views.loggin, name='login'),
+<<<<<<< HEAD
     path('needhelp', views.help, name='needhelp')
+=======
+    path('nh', views.help, name='needhelp')
+>>>>>>> 50f2511cc2d5600a2a1bc6328cdbccea83f32c11
 ]
