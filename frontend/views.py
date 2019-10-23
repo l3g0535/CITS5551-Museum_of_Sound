@@ -166,8 +166,7 @@ def user_record(request):
         return HttpResponse(json.dumps(response), content_type='application/json')
     else:
         return render(request, 'frontend/user_record.html')
-def help(request):
-    return render(request, 'frontend/landing.html')
+
 
 def signup(request):
     return render(request, 'frontend/signup-page.html')

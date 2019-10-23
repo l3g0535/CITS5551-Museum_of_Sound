@@ -79,7 +79,7 @@ DATABASES = {
         'HOST': 'localhost',
         'NAME': 'mysql',
         'PASSWORD': 'asdasd123',
-        'USER': 'bleh',
+        'USER': 'root',
     }
 }
 
