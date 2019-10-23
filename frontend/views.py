@@ -169,18 +169,7 @@ def user_record(request):
 
 
 def signup(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('sound_list')
-    else:
-        form = SignUpForm()
-    return render(request, 'frontend/signup.html', {'form': form})
+    return render(request, 'frontend/signup-page.html')
 
 
 @login_required

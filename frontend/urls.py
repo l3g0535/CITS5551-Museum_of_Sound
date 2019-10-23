@@ -4,11 +4,10 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = [
-<<<<<<< HEAD
+
     # path('', views.user_record, name='sound_list'),
-=======
     #path('', views.user_record, name='sound_list'),
->>>>>>> 288c4f64c8cb06f1c8ba5bb41f42e46668e3ae2e
+
     path('', views.landing, name='sound_list'),
     path('production', views.production_list, name='production_list'),
     path('signup', views.signup, name='signup'),
@@ -27,4 +26,5 @@ urlpatterns = [
         template_name="frontend/licensing.html"), name='licensing'),
     path('admin/download', views.download, name='download'),
     path('admin/tagging', views.tagging, name='tagging'),
+    path('login', views.loggin, name='login')
 ]

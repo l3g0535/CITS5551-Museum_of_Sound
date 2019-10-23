@@ -22,7 +22,6 @@ from chatbot.views import fbBotView
 from django.contrib.auth import views
 
 
-
 admin.site.site_header = "MoS Admin"
 admin.site.site_title = "Museum of Sound Admin Portal"
 admin.site.index_title = "Welcome to the Museum of Sound Admin Portal"
@@ -31,7 +30,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('chatbot', fbBotView.as_view()),
     path('', include('frontend.urls')),
-    url(r'^accounts/login/$', views.LoginView.as_view(), name='login'),
-    url(r'^accounts/logout/$', views.LogoutView.as_view(), name='logout', kwargs={'next_page': '/'}),
+    # url(r'^accounts/login/$', views.LoginView.as_view(), name='login'),
+    # url(r'^accounts/logout/$', views.LogoutView.as_view(), name='logout', kwargs={'next_page': '/'}),
 ]
-
