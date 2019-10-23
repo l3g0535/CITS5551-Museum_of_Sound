@@ -16,10 +16,6 @@ from django.conf import settings
 from django.contrib.auth import login, authenticate
 
 def landing(request):
-    tags = get_tags()
-    paginator = Paginator(sound_list, 5)
-    page = request.GET.get('page')
-    sounds = paginator.get_page(page)
     return render(request, 'frontend/landing.html')
 
 def get_tags():
