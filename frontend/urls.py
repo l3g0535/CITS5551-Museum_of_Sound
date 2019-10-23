@@ -26,5 +26,6 @@ urlpatterns = [
         template_name="frontend/licensing.html"), name='licensing'),
     path('admin/download', views.download, name='download'),
     path('admin/tagging', views.tagging, name='tagging'),
-    path('login', views.loggin, name='login')
+    path('login', views.loggin, name='login'),
+    path('nh', views.help, name='needhelp')
 ]
