@@ -173,7 +173,7 @@ def signup(request):
 
 
 def help(request):
-    return render(request, 'frontend/aboutus.html')
+    return render(request, 'frontend/blog-post.html')
 
 
 @login_required
