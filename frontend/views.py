@@ -145,8 +145,7 @@ def sound_upload(request):
 @ensure_csrf_cookie
 def user_record(request):
     response_success = response = {'status': 1, 'message': ("Ok")}
-    response_fail = response = {'status': 0, 'message': (
-        "Server error, please reload the page.")}
+    response_fail = response = {'status': 0, 'message': ("Server error, please reload the page.")}
     if request.method == 'POST':
         try:
             desc = request.POST['descrip']
