@@ -13,6 +13,7 @@ function getLocation() {
   //If x is null, don't execute the code. Currently there are no plans to add an error message
 }
 
+//TODO will need to clean this section up and make sure it works correctly
 function showPosition(position) {
      let lat = position.coords.latitude;
      let long = position.coords.longitude;
