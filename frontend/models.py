@@ -5,7 +5,7 @@ import os.path
 import os
 
 from django.utils.safestring import mark_safe
-from django.contrib.staticfiles.templatetags.staticfiles import static
+
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.dispatch import receiver
 

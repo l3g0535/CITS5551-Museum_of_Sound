@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+    #'django.contrib.gis',
     'whitenoise.runserver_nostatic'
 ]
 
@@ -78,8 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
         'NAME': 'mysql',
-        'PASSWORD': 'asdasd123',
-        'USER': 'bleh',
+        'PASSWORD': 'password',
+        'USER': 'admin',
     }
 }
 

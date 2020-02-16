@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 import os.path
 from django.utils.safestring import mark_safe
-from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.contrib.staticfiles.storage import staticfiles_storage
 
 class FBUserSound(models.Model):

@@ -13,8 +13,9 @@ import uuid
 import json
 import os
 from frontend.models import Tag, UserSound, Production
-from django.core import management
+from django.    core import management
 from django.conf import settings
+import requests
 from django.contrib.auth import login, authenticate
 
 
