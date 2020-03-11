@@ -8263,7 +8263,7 @@ img {
 }
 
 .landing-page .page-header {
-  height: 100vh;
+  height: 60vh;
   position: relative;
 }
 
@@ -8757,8 +8757,8 @@ img {
 }
 
 .page-header {
-  min-height: 100vh;
-  max-height: 999px;
+  min-height: 10%;
+  max-height: 60%
   padding: 0;
   color: #FFFFFF;
   position: relative;
@@ -8807,7 +8807,6 @@ img {
   color: #FFFFFF;
   padding: 0 15px;
   width: 100%;
-  max-width: 880px;
 }
 
 .page-header footer {
