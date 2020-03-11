@@ -7,3 +7,4 @@ static/js/plugins  /presentation-page/rellax.min.js
 /chatbot/management/commands/key.json
 /venv/
 /.idea/
+/adminportal/settings.py
