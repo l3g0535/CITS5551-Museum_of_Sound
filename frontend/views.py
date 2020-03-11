@@ -169,7 +169,7 @@ def user_record(request):
 
 
 def signup(request):
-    return render(request, 'frontend/signup-page.html')
+    return render(request, 'frontend/signup.html')
 
 
 def help(request):
