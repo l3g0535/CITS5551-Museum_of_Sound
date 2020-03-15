@@ -27,6 +27,10 @@ def loggin(request):
     return render(request, 'frontend/login-page.html')
 
 
+def sound_explore(request):
+    return render(request, 'frontend/explore.html')
+
+
 def get_tags():
     tags = Tag.objects.values("tag_content").annotate(
         num=Count('tag_content')).order_by('-num')[:20]
