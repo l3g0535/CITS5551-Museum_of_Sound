@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
-    #'django.contrib.gis',
+    # 'django.contrib.gis',
     'whitenoise.runserver_nostatic'
 ]
 
@@ -79,8 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
         'NAME': 'mysql',
-        'PASSWORD': 'password',
-        'USER': 'admin',
+        'PASSWORD': 'asdasd123',
+        'USER': 'root',
     }
 }
 
@@ -130,6 +130,7 @@ STATICFILES_DIRS = (
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
 
+LOGIN_URL = 'login'
 # AWS is used to serve the media and static files for better performance.
 """
 AWS_DEFAULT_ACL = 'public-read'
