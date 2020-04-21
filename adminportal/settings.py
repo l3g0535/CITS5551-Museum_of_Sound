@@ -26,8 +26,9 @@ ALLOWED_HOSTS = ['http', 'sounds.arts.uwa.edu.au',
 
 # Application definition
 INSTALLED_APPS = [
-    'chatbot',
+    'crispy_forms',
     'frontend',
+    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
