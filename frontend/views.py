@@ -3,7 +3,7 @@ from django.db.models import Count
 from django.http import Http404
 from django.utils import timezone
 from datetime import datetime, date, time, timedelta
-from .forms import UploadProductionForm, UploadSoundForm, SignUpForm
+from .forms import UploadProductionForm, UploadSoundForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.core.files.storage import default_storage
@@ -40,7 +40,7 @@ def get_tags():
 def sound_list(request):
     tags = get_tags()
     sound_list = UserSound.objects.filter(
-        is_approved="Yes").order_by('-upload_time')
+        is_approved="Y").order_by('-upload_time')
     paginator = Paginator(sound_list, 5)
     page = request.GET.get('page')
     sounds = paginator.get_page(page)
@@ -143,7 +143,7 @@ def sound_upload(request):
             print(upload.is_approved)
             print(upload.audio_file)
             # TODO fix this when DB is up
-            #upload.save()
+            upload.save()
             print('upload worked')
             return render(request, 'frontend/verification.html', {'production': upload, 'title': 'Upload a sound'})
     else:
@@ -200,5 +200,3 @@ def tagging(request):
 @login_required
 def view_and_edit_profile(request):
     return redirect('frontend/view_edit_profile')
-
-

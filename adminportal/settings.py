@@ -79,11 +79,17 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
-        'NAME': 'mysql',
+        'NAME': 'mosdb',
         'PASSWORD': 'asdasd123',
         'USER': 'root',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 # Password validation
@@ -120,18 +126,26 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/mediafiles/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+# MEDIA_URL = '/mediafiles/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+LOGIN_URL = 'login'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'frontend/static'),
 )
 
+ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
 
-LOGIN_URL = 'login'
 # AWS is used to serve the media and static files for better performance.
 """
 AWS_DEFAULT_ACL = 'public-read'

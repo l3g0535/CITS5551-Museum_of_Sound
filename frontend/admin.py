@@ -36,3 +36,6 @@ class SoundsAdmin(admin.ModelAdmin):
 
 class ImportAdmin(admin.ModelAdmin):
     change_list_template = 'admin/frontend/UserSound/change_list.html'
+
+# admin.site.register(Production)
+# admin.site.register(UserSound)
