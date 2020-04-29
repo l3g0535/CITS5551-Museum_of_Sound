@@ -19,3 +19,6 @@ six
 urllib3
 uuid
 whitenoise
+django-crispy-forms
+Pillow
+image
