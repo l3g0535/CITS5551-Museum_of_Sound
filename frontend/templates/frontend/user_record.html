@@ -2,44 +2,13 @@
 (% block format %}
 {% load static %}
 <!-- {% block title %}<div style="position:absolute;left:158px;top:20px"></div>{% endblock %} -->
-
-<div class="wrapper">
-    <div class="page-header page-header-small">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('../assets/img/bg26.jpg');">
-      </div>
-      <div class="content-center">
-        <div class="container">
-          <h1 class="title">Record Sound</h1>
-          <div class="text-center">
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-facebook-square"></i>
-            </a>
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-google-plus"></i>
-          </div>
-        </div>
 {% block form %}
         <!--Recording Buttons-->
         <!-- <div class="description text-center">
           <p style="padding-right: 15px; padding-left: 15px; text-align: justify;">By sending a recording, you acknowledge that this recording is your own work and, as the copyright holder of this work, you irrevocably grant anyone the right to use this work under the Creative Commons Attribution 4.0. (<a href="https://creativecommons.org/licenses/by/4.0/legalcode">legal code</a>)</p>
         </div> -->
 
-
- <div class="description text-center">
-          <p style="padding-right: 15px; padding-left: 15px; text-align: justify;">What sounds are around you every day that shape your life? Record them, tell us why they are meaningful to you, and deposit them in the Museum of Sound.
-          </p>
-          <p style="padding-right: 15px; padding-left: 15px; text-align: justify;">Use the buttons below to start recording your sound. Stop the recording by pressing the 'stop recording' button.
-          </p>
-          <p style="padding-right: 15px; padding-left: 15px; text-align: justify;">By sending a recording, you acknowledge that this recording is your own work and, as the copyright holder of this work, you irrevocably grant anyone the right to use this work under the Creative Commons Attribution 4.0. (<a href="https://creativecommons.org/licenses/by/4.0/legalcode">legal code</a>)</p>
-        </div>
-        <br>
-
-        <div class="text-center" id="needdesc" style="color:red; padding-right: 15px; padding-left: 15px; text-align: justify;"></div>
-        <br>
-
+<!--
         <div class="row">
 
           <div class="col-md-6 ml-auto mr-auto">
@@ -72,13 +41,13 @@
                       <textarea class="form-control" id="location" rows="1" maxlength="50"></textarea>
                       <button id="getLocation" class="btn btn-primary btn-round" onclick="getLocation()">Locate me!</button>
                     </div>
-<!--                   <button class="btn btn-light" id='loadDesc'>load description</button>   -->
+ < !--                   <button class="btn btn-light" id='loadDesc'>load description</button>   -- >
                 </div>
               </ul>
             </div>
           </div>
         </div>
-        <!--Audio Recorder & Controls-->
+        <! --Audio Recorder & Controls-- >
         <div class="tab-content tab-space" style="padding-left: 15px; padding-right: 15px;">
           <div class="tab-pane active text-center gallery" id="recording_studio" style="padding-bottom: 0px;">
             <div class="row">
@@ -94,5 +63,94 @@
   <script src="{% static 'js/recorder.js' %}"></script>
   <script src="{% static 'js/recorderApp.js' %}"></script>
   <script src="{% static 'js/plugins/js.cookie.js' %}"></script>
+-->
+<div class="contactus-1 section-image" style="background-image: url('../static/images/bg11.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <h2 class="title text-left">Record Your Sound</h2>
+        <h4 class="description">Hear something you'd like to share? Use this tool to record your sound.</h4>
+        <div class="info info-horizontal">
+          <div class="icon icon-primary">
+            <i class="now-ui-icons location_pin"></i>
+          </div>
+          <div class="description">
+            <h4 class="info-title">Record</h4>
+            <p class="description"> To start recording press 'Record'.
+              <br> Stop the recording by pressing 'Stop'.
+            </p>
+          </div>
+        </div>
+        <div class="info info-horizontal">
+          <div class="icon icon-primary">
+            <i class="now-ui-icons tech_mobile"></i>
+          </div>
+          <div class="description">
+            <h4 class="info-title">Upload</h4>
+            <p class="description"> By uploading, you acknowledge this recording is your own work,
+               and as the copyright holder of this work you irrevocably grant
+               anyone the right to use this work under the Creative Commons Attribution 4.0.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 ml-auto mr-auto">
+        <div class="card card-contact card-raised">
+          <div class="row">
+
+           <div class="col-md-6 ml-auto mr-auto">
+             <div class="profile-tabs">
+                 <div class="text-center">
+                     <span style="color: red; font-size: 144%; "><p></p><div id="Recording"></div></p></span>
+                 </div>
+               <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+                 <div id="controls">
+                   <button class="btn btn-danger" id='recordButton'>Record</button>
+                   <button class="btn" id='stopButton'>Stop</button>
+                   <button class="btn" id='sendButton'>Send</button>
+
+                   <div class="text-center">
+                         <div id="countdown"></div>
+                       <div id = "userrecord"></div>
+                       </div>
+                     <br>
+                     <div class="form-group">
+                       <label for="title">Title</label>
+                       <textarea class="form-control" id="title" rows="1" maxlength="25"></textarea>
+                     <br>
+                       <label for="desc">Description</label>
+                       <textarea class="form-control" id="desc" rows="3" maxlength="100"></textarea>
+                     <br>
+                       <label for="tags">Tags</label>
+                       <textarea class="form-control" id="tags" rows="1" maxlength="50"></textarea>
+                     <br>
+                       <label for="location">Location</label>
+                       <textarea class="form-control" id="location" rows="1" maxlength="50"></textarea>
+                       <button id="getLocation" class="btn btn-round" onclick="getLocation()">Locate me!</button>
+                     </div>
+                 </div>
+               </ul>
+             </div>
+           </div>
+         </div>
+         <!--Audio Recorder & Controls-->
+         <div class="tab-content tab-space" style="padding-left: 15px; padding-right: 15px;">
+           <div class="tab-pane active text-center gallery" id="recording_studio" style="padding-bottom: 0px;">
+             <div class="row">
+               <div class="col-md-3 ml-auto">
+               </div>
+             </div>
+           </div>
+         </div>
+         </div>
+       </div>
+     </div>
+
+   <script src="{% static 'js/recorder.js' %}"></script>
+   <script src="{% static 'js/recorderApp.js' %}"></script>
+   <script src="{% static 'js/plugins/js.cookie.js' %}"></script>
+
+          </div>
+        </div>
 
 {% endblock %}
