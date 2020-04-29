@@ -2,10 +2,16 @@
 {% block format %}
 {% load static %}
 
-  <div class="page-header page-header-small" data-parallax="true" style="background-image: url({%  static 'images/bg3.jpg' %});"></div>
-  <div class="main main-raised">
-    <div class="profile-content">
-      <div class="container">
+  <!--<div class="page-header page-header-small" data-parallax="true" style="background-image: url({%  static 'images/bg3.jpg' %});"></div>-->
+<div class="wrapper">
+   <!--<div class="page-header page-header-mini">
+      <div class="page-header-image" data-parallax="true" style="background-image: url('../static/images/bg3.jpg');">
+      </div>
+    </div> -->
+  <!--<div class="section"> -->
+ <!-- <div class="main main-raised"> -->
+  <!--  <div class="profile-content"> -->
+      <!--<div class="container"> -->
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile">
@@ -18,6 +24,8 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
         {% block form %}{% endblock %}
       </div></div></div>
 {% endblock %}
