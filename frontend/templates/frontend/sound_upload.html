@@ -1,9 +1,8 @@
 
-{% extends 'frontend/user_interaction.html' %}
+{% extends 'frontend/base.html' %}
 
 {% load static %}
-{% block form %}
-<div class="wrapper">
+{% block format %}
 <div class="contactus-1 section-image" style="background-image: url('../static/images/bg51.jpg')">
   <div class="container">
     <div class="row">
@@ -63,7 +62,8 @@
         </div>
     </div>
   </div>
-
+</div>
+    {% endblock %}
 
 
 
@@ -152,4 +152,4 @@
         </form></label>
         -->
 
-{% endblock %}
+
