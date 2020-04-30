@@ -18,7 +18,7 @@ class Production(models.Model):
     upload_time = models.DateTimeField()
     audio_file = models.FileField()
     uploader_id = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+        settings.AUTH_USER_MODEL, on_delete=models.SET_DEFAULT, default="", blank=True)
     is_approved = models.CharField(max_length=256, choices=[
                                    ('Y', 'YES'), ('N', 'NO')], default='N')
 
@@ -32,6 +32,10 @@ class Production(models.Model):
 
 class UserSound(models.Model):
     sound_id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_DEFAULT,
+                                default="", blank=True, null=True)
+    image_file = models.FileField(null=True)
+    title = models.CharField(max_length=50, default='')
     upload_time = models.DateTimeField()
     description = models.TextField(blank=True, null=True)
     audio_file = models.FileField()
@@ -53,6 +57,7 @@ class UserSound(models.Model):
         return tags
 
 
+# de-normalised tag table allows for simpler and more efficient queries at the cost of minimal storage space
 class Tag(models.Model):
     tag_id = models.AutoField(primary_key=True)
     sound_id = models.ForeignKey(UserSound, on_delete=models.CASCADE)

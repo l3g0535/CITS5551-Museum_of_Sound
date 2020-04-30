@@ -118,7 +118,6 @@ def upload_production(request):
 def handle_upload(root, file):
     file_ext = os.path.splitext(file.name)[1]
     if not file_ext:
-        # TODO test this, it changes every non compatible file type to .wav?
         file_ext = ".wav"
     filename = root + uuid.uuid4().hex + file_ext
     with default_storage.open(filename, 'wb+') as destination:
@@ -142,7 +141,6 @@ def sound_upload(request):
             print(upload.sound_id)
             print(upload.is_approved)
             print(upload.audio_file)
-            # TODO fix this when DB is up
             upload.save()
             print('upload worked')
             return render(request, 'frontend/verification.html', {'production': upload, 'title': 'Upload a sound'})

@@ -1,13 +1,14 @@
-{% extends 'frontend/user_interaction.html' %}
+{% extends 'frontend/base.html' %}
 {% load static %}
-{% block title %}About Us{% endblock %}
-
-{% block form %}
-
-    <div class="description text-center">
-    <p style="color:black; padding-right: 15px; padding-left: 15px; text-align: justify;">
-        <h4 class="<title2">Sounds shape the way we feel and see the world, yet we don’t often stop and listen, much less collect and share the sounds that surround us.</h4>
-        <br>
+{% block format %}
+<div class="contactus-1 section-image" style="background-image: url('../static/images/bg19.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-15">
+        <h1 class="title text-left">About Us</h1>
+          <br>
+        <h3 class="description">Sounds shape the way we feel and see the world, yet we don’t often stop and listen, much less collect and share the sounds that surround us.</h3>
+        <h5 class="description"><br>
         Do you remember the sound of dial-up internet? What about the whistle of an old kettle, the sound of the coffee machine at your favourite café, the no-sound of a silent elevator, or a wine cork popping.
         All of these sounds are associated with emotions and memory.
         <br>
@@ -16,10 +17,9 @@
         Get involved by recording a short sound clip on the 'Record a Sound' page and telling us why this sound matters to you.
         <br><br>
         The Museum of Sound is curated and created by Dr. Sarah Collins.
-     </br></br>
-
-    </p>
-    <br>
-    <br>
+     </br></br></h5>
+    <br><br><br>
+    </div>
+        </div></div></div>
 
 {% endblock %}

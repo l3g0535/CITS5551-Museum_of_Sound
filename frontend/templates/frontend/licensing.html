@@ -1,15 +1,19 @@
-{% extends 'frontend/user_interaction.html' %}
+{% extends 'frontend/base.html' %}
+
 {% load static %}
-{% block title %}Licensing{% endblock %}
 
-{% block form %}
-
-        <div class="description text-center">
-          <p style="color:black; padding-right: 15px; padding-left: 15px; text-align: justify;">
-          	Recordings are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).
-          	<br><br>
-            By sending a recording, you acknowledge that this recording is your own work and, as the copyright holder of this work, you irrevocably grant anyone the right to use this work under the Creative Commons Attribution 4.0. (<a href="https://creativecommons.org/licenses/by/4.0/legalcode">legal code</a>)</p>
-        </br><br><br>
-</p>
+{% block format %}
+<div class="contactus-1 section-image" style="background-image: url('../static/images/bg2.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-15">
+        <h1 class="title text-left">Licensing</h1>
+          <br>
+        <h4 class="description">Recordings are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).</h4>
+          <br>
+        <h4 class="description">By sending a recording, you acknowledge that this recording is your own work and, as the copyright holder of this work, you irrevocably grant anyone the right to use this work under the Creative Commons Attribution 4.0. (<a href="https://creativecommons.org/licenses/by/4.0/legalcode">legal code</a>)</h4>
+<br><br><br>
+    </div>
+        </div></div></div>
 
 {% endblock %}
