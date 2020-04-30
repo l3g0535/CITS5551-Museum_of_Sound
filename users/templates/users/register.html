@@ -1,23 +1,35 @@
 {% extends 'frontend/base.html' %}
 {% load crispy_forms_tags %}
-
+{% load static %}
 {% block format %}
-    <div class = 'content-section'>
-        <form method = 'POST'>
-            {% csrf_token %}
-            <fieldset class = 'form-group'>
-                <legend class = 'border-bottom mb-4'>Join Today</legend>
-                {{form|crispy}}
-            </fieldset>
-            <div class='form-group'>
-                <button class='btn btn-outline-info' type='submit'>Sign Up</button>
-            </div>
-        </form>
-        <div class = 'border-top pt-3'>
-            <small class ='text-muted'>
-                Already Have An Account?<a class='ml-2' href={% url 'login' %}>Sign in</a> here
-            </small>
+<div class="page-header header-filter" filter-color="orange">
+    <div class="page-header-image" style="background-image:url(../static/images/login.jpg)"></div>
+    <div class="content">
+      <div class="container">
+        <div class="col-md-5 ml-auto mr-auto">
+          <div class="card card-login card-plain">
+            <form class="form" method="" action="">
+                <div class = 'content-section'>
+                    <form method = 'POST'>
+                        {% csrf_token %}
+                        <fieldset class = 'form-group'>
+                            <legend class = 'border-bottom mb-4'>Join Today</legend>
+                            {{form|crispy}}
+                        </fieldset>
+                        <div class='form-group'>
+                            <button class='btn btn-primary btn-round btn-lg btn-block' type='submit'>Sign Up</button>
+                        </div>
+                    </form>
+                        <small class ='text-muted'>
+                            Already Have An Account?<a class='ml-2' href={% url 'login' %}>Sign in</a> here<br><br>
+                        </small>
+                    </div>
+                </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+</div>
 
 {% endblock format %}
