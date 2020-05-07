@@ -3,9 +3,9 @@ from django.db import models
 from django.conf import settings
 import os.path
 import os
-
+from django.utils import timezone
 from django.utils.safestring import mark_safe
-
+from django.contrib.auth.models import User
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.dispatch import receiver
 
@@ -18,7 +18,7 @@ class Production(models.Model):
     upload_time = models.DateTimeField()
     audio_file = models.FileField()
     uploader_id = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.SET_DEFAULT, default="", blank=True)
+        User, on_delete=models.SET_DEFAULT, default="", blank=True)
     is_approved = models.CharField(max_length=256, choices=[
                                    ('Y', 'YES'), ('N', 'NO')], default='N')
 
@@ -32,11 +32,11 @@ class Production(models.Model):
 
 class UserSound(models.Model):
     sound_id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_DEFAULT,
-                                default="", blank=True, null=True)
+    user = models.ForeignKey(User, on_delete=models.SET_DEFAULT,
+                             default="", blank=True, null=True)
     image_file = models.FileField(null=True)
     title = models.CharField(max_length=50, default='')
-    upload_time = models.DateTimeField()
+    upload_time = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True, null=True)
     audio_file = models.FileField()
     approve_choices = [('Y', 'YES'), ('N', 'NO')]
@@ -56,21 +56,22 @@ class UserSound(models.Model):
             sound_id=self.sound_id)]
         return tags
 
-
 # de-normalised tag table allows for simpler and more efficient queries at the cost of minimal storage space
-class Tag(models.Model):
-    tag_id = models.AutoField(primary_key=True)
-    sound_id = models.ForeignKey(UserSound, on_delete=models.CASCADE)
-    tag_content = models.TextField(null=False)
 
 
-@receiver(models.signals.post_delete, sender=UserSound)
-def auto_delete_file_on_delete(sender, instance, **kwargs):
-    if instance.audio_file:
-        instance.audio_file.delete(save=False)
+# class Tag(models.Model):
+#     tag_id = models.AutoField(primary_key=True)
+#     sound_id = models.ForeignKey(UserSound, on_delete=models.CASCADE)
+#     tag_content = models.TextField(null=False)
 
 
-@receiver(models.signals.post_delete, sender=Production)
-def auto_delete_file_on_delete(sender, instance, **kwargs):
-    if instance.audio_file:
-        instance.audio_file.delete(save=False)
+# @receiver(models.signals.post_delete, sender=UserSound)
+# def auto_delete_file_on_delete(sender, instance, **kwargs):
+#     if instance.audio_file:
+#         instance.audio_file.delete(save=False)
+
+
+# @receiver(models.signals.post_delete, sender=Production)
+# def auto_delete_file_on_delete(sender, instance, **kwargs):
+#     if instance.audio_file:
+#         instance.audio_file.delete(save=False)

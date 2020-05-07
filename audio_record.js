@@ -44,7 +44,7 @@ function start_recording() {
     var constraint = { audio: true, video: false }; //record audio
     navigator.mediaDevices
       .getUserMedia(constraint)
-      .then(function(stream) {
+      .then(function (stream) {
         console.log(
           "getUserMedia() Success, stream created, intialising Recorder.js"
         );
@@ -52,13 +52,13 @@ function start_recording() {
         gumstream = stream;
         input = audio_context.createMediaStreamSource(stream);
         record = new Recorder(input, {
-          numChannels: 1
+          numChannels: 1,
         });
         record.record();
         console.log("Recording.....");
         clear = setInterval(counting, 1000);
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.log(err.name, err.message);
       });
     record_button.innerText = "Pause";
@@ -96,7 +96,7 @@ function upload_recording() {
 
 function stop_stream() {
   if (!window.streamReference) return;
-  window.streamReference.getAudioTracks().forEach(function(track) {
+  window.streamReference.getAudioTracks().forEach(function (track) {
     track.stop();
   });
   window.streamReference = NULL;
