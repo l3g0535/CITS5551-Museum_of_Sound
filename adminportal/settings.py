@@ -36,7 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',
     # 'django.contrib.gis',
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
+    'corsheaders',
+    'rest_framework',
 ]
 
 
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'adminportal.urls'
@@ -79,8 +82,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
         'NAME': 'mosdb',
-        'PASSWORD': 'asdasd123',
-        'USER': 'root',
+        'PASSWORD': 'password',
+        'USER': 'admin',
     }
 }
 
@@ -137,6 +140,14 @@ STATICFILES_DIRS = (
 ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
+
+# CORS_ORIGIN_WHITELIST = (
+#     'http://localhost',
+#     'http://localhost:8080',
+#     'http://127.0.0.1',
+# )
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 # AWS is used to serve the media and static files for better performance.
 """

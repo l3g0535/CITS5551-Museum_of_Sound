@@ -8,14 +8,16 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.core.files.storage import default_storage
 from django.views.decorators.csrf import ensure_csrf_cookie
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 import uuid
 import json
 import os
 from frontend.models import UserSound, Production
+from frontend.serializers import UserSoundSerializer
 from django.core import management
 from django.conf import settings
 import requests
+from rest_framework.decorators import api_view
 from django.contrib.auth import login, authenticate
 
 
@@ -190,3 +192,11 @@ def download(request):
 def tagging(request):
     management.call_command('tagging')
     return redirect('frontend/usersound/')
+
+
+@api_view(['GET'])
+def get_sound_list(request):
+    if request.method == "GET":
+        rest_list = UserSound.objects.order_by('upload_time')
+        serializer = UserSoundSerializer(rest_list, many=True)
+        return JsonResponse(serializer.data, safe=False)

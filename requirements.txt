@@ -22,3 +22,5 @@ whitenoise
 django-crispy-forms
 Pillow
 image
+djangorestframework
+django-cors-headers
