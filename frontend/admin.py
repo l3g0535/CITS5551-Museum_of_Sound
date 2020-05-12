@@ -5,20 +5,20 @@ from django.db import models
 
 # Create your models here.
 from django.contrib import admin
-from .models import Production, UserSound
+from frontend.models import UserSound, Production
 import os
 
 # Register your models here.
 
 
 def mark_approved(self, request, queryset):
-    queryset.update(is_approved="Yes")
+    queryset.update(is_approved="Y")
 
 
 @admin.register(UserSound)
-class SoundsAdmin(admin.ModelAdmin):
-    list_display = ('upload_time', 'description',
-                    'audio_file_player', 'tags', 'is_approved')
+class SoundAdmin(admin.ModelAdmin):
+    # list_display = [field.name for field in UserSound._meta.get_fields()]
+    list_display = ['sound_id', 'title', 'is_approved']
     #readonly_fields = ('upload_time','description','audio_file','tags','is_tagged')
     list_filter = ('is_approved', )
     actions = [mark_approved]
@@ -34,8 +34,9 @@ class SoundsAdmin(admin.ModelAdmin):
     actions = [mark_approved]
 
 
-class ImportAdmin(admin.ModelAdmin):
-    change_list_template = 'admin/frontend/UserSound/change_list.html'
+# class ImportAdmin(admin.ModelAdmin):
+#     change_list_template = 'admin/frontend/UserSound/change_list.html'
 
-# admin.site.register(Production)
+
+# admin.site.register(UserSound, SoundAdmin)
 # admin.site.register(UserSound)

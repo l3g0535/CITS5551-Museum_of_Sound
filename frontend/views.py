@@ -12,8 +12,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 import uuid
 import json
 import os
-from frontend.models import Tag, UserSound, Production
-from django.    core import management
+from frontend.models import UserSound, Production
+from django.core import management
 from django.conf import settings
 import requests
 from django.contrib.auth import login, authenticate
@@ -119,11 +119,12 @@ def handle_upload(root, file):
     file_ext = os.path.splitext(file.name)[1]
     if not file_ext:
         file_ext = ".wav"
-    filename = root + uuid.uuid4().hex + file_ext
+    sound = uuid.uuid4().hex
+    filename = root + sound + file_ext
     with default_storage.open(filename, 'wb+') as destination:
         for chunk in file.chunks():
             destination.write(chunk)
-    return filename
+    return sound+file_ext
 
 
 def sound_upload(request):
@@ -175,10 +176,6 @@ def user_record(request):
         return render(request, 'frontend/user_record.html')
 
 
-def signup(request):
-    return render(request, 'frontend/signup.html')
-
-
 def help(request):
     return render(request, 'frontend/blog-post.html')
 
@@ -193,8 +190,3 @@ def download(request):
 def tagging(request):
     management.call_command('tagging')
     return redirect('frontend/usersound/')
-
-
-@login_required
-def view_and_edit_profile(request):
-    return redirect('frontend/view_edit_profile')

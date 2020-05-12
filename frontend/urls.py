@@ -15,7 +15,6 @@ urlpatterns = [
     # path('', views.user_record, name='sound_list'),
     #path('', views.user_record, name='sound_list'),
 
-    # path('signup', views.signup, name='signup'),
     path('', views.landing, name='sound_list'),
     path('explore', views.sound_explore, name='sound_explore'),
     path('production', views.production_list, name='production_list'),

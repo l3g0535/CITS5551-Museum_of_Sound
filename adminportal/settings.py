@@ -19,7 +19,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!(q6v&qi3-w-ktcqx_vaf6b4*#lh46u07+6+-41$0vqc9y$#$e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
 ALLOWED_HOSTS = ['http', 'sounds.arts.uwa.edu.au',
                  '130.95.5.104', 'localhost', '127.0.0.1', '[::1]']
 
@@ -80,11 +79,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
         'NAME': 'mosdb',
-        'PASSWORD': 'a',
+        'PASSWORD': 'asdasd123',
         'USER': 'root',
     }
 }
-
 
 # Password validation
 
@@ -107,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Australia/Perth'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
