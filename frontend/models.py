@@ -39,10 +39,10 @@ class UserSound(models.Model):
     upload_time = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True, null=True)
     audio_file = models.FileField()
+    location = models.TextField(null=True)
     approve_choices = [('Y', 'YES'), ('N', 'NO')]
     is_approved = models.CharField(
         max_length=3, choices=approve_choices, default='N')
-    is_tagged = models.BooleanField(default=False)
 
     def audio_file_player(self):
         """audio player tag for admin"""
@@ -59,10 +59,10 @@ class UserSound(models.Model):
 # de-normalised tag table allows for simpler and more efficient queries at the cost of minimal storage space
 
 
-# class Tag(models.Model):
-#     tag_id = models.AutoField(primary_key=True)
-#     sound_id = models.ForeignKey(UserSound, on_delete=models.CASCADE)
-#     tag_content = models.TextField(null=False)
+class Tag(models.Model):
+
+    sound_id = models.ForeignKey(UserSound, on_delete=models.CASCADE)
+    tag_content = models.TextField(null=False)
 
 
 # @receiver(models.signals.post_delete, sender=UserSound)

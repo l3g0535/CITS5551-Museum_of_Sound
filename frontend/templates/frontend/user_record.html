@@ -40,13 +40,14 @@
                       <textarea class="form-control" id="location" rows="1" maxlength="50"></textarea>
                       <button id="getLocation" class="btn btn-primary btn-round" onclick="getLocation()">Locate me!</button>
                     </div>
- < !--                   <button class="btn btn-light" id='loadDesc'>load description</button>   -- >
+                <button class="btn btn-light" id='loadDesc'>load description</button>   -- >
+<!--
                 </div>
               </ul>
             </div>
           </div>
         </div>
-        <! --Audio Recorder & Controls-- >
+        Audio Recorder & Controls
         <div class="tab-content tab-space" style="padding-left: 15px; padding-right: 15px;">
           <div class="tab-pane active text-center gallery" id="recording_studio" style="padding-bottom: 0px;">
             <div class="row">
@@ -58,11 +59,15 @@
         </div>
       </div>
     </div>
-
+  
   <script src="{% static 'js/recorder.js' %}"></script>
   <script src="{% static 'js/recorderApp.js' %}"></script>
   <script src="{% static 'js/plugins/js.cookie.js' %}"></script>
+  
 -->
+
+
+
 <div class="contactus-1 section-image" style="background-image: url('../static/images/bg11.jpg')">
   <div class="container">
     <div class="row">
@@ -109,8 +114,9 @@
                    <button class="btn" id='sendButton'>Send</button>
 
                    <div class="text-center">
-                         <div id="countdown"></div>
+                      <div id="countdown"></div>
                        <div id = "userrecord"></div>
+                       <div id = "needs"></div>
                        </div>
                      <br>
                      <div class="form-group">
@@ -121,7 +127,8 @@
                        <textarea class="form-control" id="desc" rows="3" maxlength="100"></textarea>
                      <br>
                        <label for="tags">Tags</label>
-                       <textarea class="form-control" id="tags" rows="1" maxlength="50"></textarea>
+                       {% comment %} <textarea class="form-control" id="tags" rows="1" maxlength="50"></textarea> {% endcomment %}
+                       <span class="select-tag"></span>
                      <br>
                        <label for="location">Location</label>
                        <textarea class="form-control" id="location" rows="1" maxlength="50"></textarea>
@@ -148,8 +155,10 @@
    <script src="{% static 'js/recorder.js' %}"></script>
    <script src="{% static 'js/recorderApp.js' %}"></script>
    <script src="{% static 'js/plugins/js.cookie.js' %}"></script>
-
-          </div>
-        </div>
+   <script src="{% static 'js/slm/dist/bundle.min.js' %}"></script>
+   <script src="{% static 'js/choices.js' %}"></script>
+  
+    </div>
+  </div>
 
 {% endblock %}

@@ -12,7 +12,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 import uuid
 import json
 import os
-from frontend.models import UserSound, Production
+from frontend.models import UserSound, Production, Tag
 from django.core import management
 from django.conf import settings
 import requests
@@ -21,10 +21,6 @@ from django.contrib.auth import login, authenticate
 
 def landing(request):
     return render(request, 'frontend/landing.html')
-
-
-def loggin(request):
-    return render(request, 'frontend/login-page.html')
 
 
 def sound_explore(request):
@@ -157,15 +153,32 @@ def user_record(request):
         "Server error, please reload the page.")}
     if request.method == 'POST':
         try:
-            desc = request.POST['descrip']
+            tags = request.POST['tags']
             uploaded_file = request.FILES['sound']
             print(uploaded_file)
+            print(tags)
             upload = UserSound()
             upload.upload_time = timezone.now()
-            upload.description = desc
+            upload.description = request.POST['descrip']
+            upload.title = request.POST['title']
+            upload.location = request.POST['location']
             upload.audio_file.name = handle_upload(
                 settings.SOUND_DIR, uploaded_file)
             upload.save()
+            if ',' in tags:
+                tags = tags.split(',')
+                for tt in tags:
+                    tag = Tag()
+                    tag.sound_id = upload
+                    print(tt)
+                    tag.tag_content = tt
+                    tag.save()
+                    print('saved')
+            else:
+                tag = Tag()
+                tag.sound_id = upload
+                tag.tag_content = tags
+                tag.save()
             response = response_success
         except Exception as e:
             print(e)
