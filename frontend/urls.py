@@ -17,7 +17,7 @@ urlpatterns = [
 
     #re_path(r'^api/soundlist/', views.get_sound_list),
 
-    path('', views.landing, name='sound_list'),
+    path('', views.landing, name='landing'),
     path('explore', views.sound_explore, name='sound_explore'),
     path('production', views.production_list, name='production_list'),
     path('soundlist/', views.sound_list, name='sound_list'),
