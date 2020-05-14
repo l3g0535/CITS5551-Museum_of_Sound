@@ -15,7 +15,7 @@ urlpatterns = [
     # path('', views.user_record, name='sound_list'),
     #path('', views.user_record, name='sound_list'),
 
-    re_path(r'^api/soundlist/', views.get_sound_list),
+    #re_path(r'^api/soundlist/', views.get_sound_list),
 
     path('', views.landing, name='sound_list'),
     path('explore', views.sound_explore, name='sound_explore'),
