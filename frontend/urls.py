@@ -3,7 +3,7 @@ from . import views
 from django.views.generic import TemplateView
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from users import views as user_views
 
@@ -14,6 +14,8 @@ urlpatterns = [
 
     # path('', views.user_record, name='sound_list'),
     #path('', views.user_record, name='sound_list'),
+
+    re_path(r'^api/soundlist/', views.get_sound_list),
 
     path('', views.landing, name='sound_list'),
     path('explore', views.sound_explore, name='sound_explore'),

@@ -148,6 +148,7 @@ function stopRecording() {
 
 function afterSending() {
   isRecording.innerHTML = "Recording Received";
+  document.getElementById("needs").innerHTML = "";
   recordButton.disabled = false;
   stopButton.disabled = true;
   sendButton.disabled = true;
@@ -156,20 +157,32 @@ function afterSending() {
 function sendRecording() {
   console.log("sendButton clicked");
   var descrip = document.getElementById("desc").value;
+  var location = document.getElementById("location").value;
+  var title = document.getElementById("title").value;
+  var tags = multi.value();
+  // var tags = document.getElementById("tag").value;
+
   if (descrip == "") {
     console.log("need description");
-    document.getElementById("needdesc").innerHTML =
-      "Please enter a description";
+    document.getElementById("needs").innerHTML = "Please enter a description";
+    sendButton.disabled = false;
+  } else if (location == "") {
+    console.log("need location");
+    document.getElementById("needs").innerHTML = "Please enter a location";
     sendButton.disabled = false;
   } else {
     console.log(descrip);
+    console.log(location);
     console.log(send_blob);
     var csrftoken = Cookies.get("csrftoken");
     console.log(Cookies.get("csrftoken"));
     var fd = new FormData();
     fd.append("csrfmiddlewaretoken", csrftoken);
     fd.append("descrip", descrip);
+    fd.append("location", location);
+    fd.append("tags", tags);
     fd.append("sound", send_blob);
+    fd.append("title", title);
     $.ajax({
       type: "POST",
       url: "/sound/record",
