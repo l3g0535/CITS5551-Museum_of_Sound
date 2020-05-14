@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
         'NAME': 'mosdb',
-        'PASSWORD': 'asdasd123',
+        'PASSWORD': 'a',
         'USER': 'root',
     }
 }
