@@ -1,0 +1,1 @@
+web: gunicorn CITS5551-Museum_of_Sound.wsgi --log-file -
