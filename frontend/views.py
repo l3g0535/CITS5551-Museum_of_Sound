@@ -66,8 +66,8 @@ def tag_filter(request, tag):
     if not Tag.objects.filter(tag_content=tag).exists():
         raise Http404("Tag doesn't exist.")
     tags = get_tags()
-    sounds = UserSound.objects.filter(tag__tag_content=tag, is_approved="Yes")
-    return render(request, 'frontend/sound_list.html', {'sounds': sounds, 'head': tag, 'tags': tags})
+    sounds = UserSound.objects.filter(tag__tag_content=tag, is_approved="Y")
+    return render(request, 'frontend/sound_list.html', {'sounds': sounds, 'tags': tags})
 
 
 def date_filter(request, arg):
@@ -77,7 +77,7 @@ def date_filter(request, arg):
     tags = Tag.objects.distinct()
     distinct_dates = UserSound.objects.values('upload_time')
     sounds = UserSound.objects.filter(
-        is_approved="Yes", upload_time__gte=date_start, upload_time__lt=date_end)
+        is_approved="Y", upload_time__gte=date_start, upload_time__lt=date_end)
     if not sounds.exists():
         raise Http404("No sounds on this date.")
     return render(request, 'frontend/filter.html', {'sounds': sounds, 'head': arg, 'tags': tags})
@@ -89,7 +89,7 @@ def search(request):
     if len(query) == 0:
         return render(request, 'frontend/empty_search.html', {'tags': tags})
     else:
-        result_set = UserSound.objects
+        result_set = UserSound.objects.filter(is_approved="Y")
         tags = get_tags()
         # if query.get('username'):
         #     result_set = result_set.filter(user_id=query.get('username'))
