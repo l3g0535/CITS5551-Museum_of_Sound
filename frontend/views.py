@@ -83,13 +83,23 @@ def date_filter(request, arg):
     return render(request, 'frontend/filter.html', {'sounds': sounds, 'head': arg, 'tags': tags})
 
 
-def search_tag(request):
+def search(request):
     tags = get_tags()
-    query = request.GET.get('q')
-    if Tag.objects.filter(tag_content=query):
-        return tag_filter(request, query)
-    else:
+    query = request.GET
+    if len(query) == 0:
         return render(request, 'frontend/empty_search.html', {'tags': tags})
+    else:
+        result_set = UserSound.objects
+        tags = get_tags()
+        # if query.get('username'):
+        #     result_set = result_set.filter(user_id=query.get('username'))
+        if query.get('tag'):
+            result_set = result_set.filter(tag__tag_content=query.get('tag'))
+        if query.get('title'):
+            result_set = result_set.filter(title__icontains=query.get('title'))
+        if len(result_set) == 0:
+            return render(request, 'frontend/empty_search.html', {'tags': tags})
+        return render(request, 'frontend/sound_list.html', {'sounds': result_set, 'tags': tags})
 
 
 @login_required

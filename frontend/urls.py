@@ -25,7 +25,7 @@ urlpatterns = [
     path('tag/<tag>', views.tag_filter, name='tag'),
     path('date/<arg>', views.date_filter, name='date'),
     path('production/upload', views.upload_production, name='upload_prod'),
-    path('search', views.search_tag, name='search_tag'),
+    path('search', views.search, name='search_tag'),
     path('sound/record', views.user_record, name='user_record'),
     path('sound/upload', views.sound_upload, name='sound_upload'),
     path('privacy', TemplateView.as_view(
