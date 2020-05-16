@@ -5,14 +5,8 @@
 {% load static %}
 {% block format %}
 
-<div class="page-header header-filter" filter-color="orange">
-  <div class="page-header-image" style="background-image:url(../static/images/bg8.jpg)"></div>
-
-<div class="content">
-  <div class="container">
-    <div class="col-md-5 ml-auto mr-auto">
+<div class="content-section">
   <div class="media">
-
     <img
       class="rounded-circle account-img"
       src="{{ user.profile.image.url }}"
@@ -34,10 +28,5 @@
     </div>
   </form>
 </div>
-  </div>
-</div>
-</div>
-
 
 {% endblock format %}
-</html>
