@@ -1,8 +1,7 @@
 import os
 from dotenv import load_dotenv
 from os.path import join, dirname
-import django_heroku
-
+#import django_heroku
 
 # Needed to import API authentication codes from .env in root directory.
 dotenv_path = join(dirname(__file__), '.env')
@@ -21,7 +20,7 @@ SECRET_KEY = '!(q6v&qi3-w-ktcqx_vaf6b4*#lh46u07+6+-41$0vqc9y$#$e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = ['http', 'sounds.arts.uwa.edu.au',
-                 '130.95.5.104', 'localhost', '127.0.0.1', '[::1]', '10.20.237.178','museum-of-sound.herokuapp.com']
+                 '130.95.5.104', 'localhost', '127.0.0.1', '[::1]', '10.20.237.178']
 
 
 # Application definition
@@ -164,24 +163,3 @@ STATICFILES_STORAGE = 'adminportal.storage_backends.StaticStorage'
 DEFAULT_FILE_STORAGE = 'adminportal.storage_backends.MediaStorage'
 
 """
-
-
-
-
-#Heroku Static File Storage
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/static/'
-
-# Extra lookup directories for collectstatic to find static files
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
-
-#  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-django_heroku.settings(locals())
- 
