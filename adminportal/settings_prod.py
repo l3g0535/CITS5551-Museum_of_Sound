@@ -20,8 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!(q6v&qi3-w-ktcqx_vaf6b4*#lh46u07+6+-41$0vqc9y$#$e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['http', 'https', 'sounds.arts.uwa.edu.au',
-                 '130.95.5.104', 'localhost', '127.0.0.1', '[::1]', '10.20.237.178','museum-of-sound.herokuapp.com']
+ALLOWED_HOSTS = ['http', 'https','museum-of-sound.herokuapp.com']
 
 
 # Application definition
@@ -75,15 +74,8 @@ WSGI_APPLICATION = 'adminportal.wsgi.application'
 
 # Database definition
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'NAME': 'mosdb',
-        'PASSWORD': 'a',
-        'USER': 'root',
-    }
-}
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 
