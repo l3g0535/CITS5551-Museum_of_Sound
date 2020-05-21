@@ -6,7 +6,6 @@ import os
 from django.utils import timezone
 from django.utils.safestring import mark_safe
 from django.contrib.auth.models import User
-from django.contrib.staticfiles.storage import staticfiles_storage
 from django.dispatch import receiver
 
 

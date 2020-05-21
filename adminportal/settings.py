@@ -173,5 +173,3 @@ ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
 
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
