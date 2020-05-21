@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from os.path import join, dirname
 import django_heroku
+import dj_database_url
 
 
 # Needed to import API authentication codes from .env in root directory.
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!(q6v&qi3-w-ktcqx_vaf6b4*#lh46u07+6+-41$0vqc9y$#$e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['http', 'https','museum-of-sound.herokuapp.com']
+ALLOWED_HOSTS = ['http', 'https', 'museum-of-sound.herokuapp.com']
 
 
 # Application definition
