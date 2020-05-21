@@ -1,1 +1,1 @@
-web: gunicorn CITS5551-Museum_of_Sound.adminportal.wsgi:app --log-file -
+web: gunicorn adminportal.wsgi --log-file -
