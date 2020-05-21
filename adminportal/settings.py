@@ -1,7 +1,9 @@
 import os
 from dotenv import load_dotenv
 from os.path import join, dirname
-#import django_heroku
+import django_heroku
+import dj_database_url
+
 
 # Needed to import API authentication codes from .env in root directory.
 dotenv_path = join(dirname(__file__), '.env')
@@ -18,9 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '!(q6v&qi3-w-ktcqx_vaf6b4*#lh46u07+6+-41$0vqc9y$#$e'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['http', 'sounds.arts.uwa.edu.au',
-                 '130.95.5.104', 'localhost', '127.0.0.1', '[::1]', '10.20.237.178']
+DEBUG = True
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -73,16 +74,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'adminportal.wsgi.application'
 
 # Database definition
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'NAME': 'mosdb',
-        'PASSWORD': 'password',
-        'USER': 'admin',
-    }
-}
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 
@@ -113,14 +106,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-# MEDIA_URL = '/mediafiles/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
@@ -138,28 +123,22 @@ ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
 
-# AWS is used to serve the media and static files for better performance.
-"""
-AWS_DEFAULT_ACL = 'public-read'
-AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
-AWS_S3_REGION_NAME = os.environ["AWS_S3_REGION_NAME"]
-AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
-AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
+#Heroku Static File Storage
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
 
-# Tell django-storages the domain to use to refer to static files.
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# Extra lookup directories for collectstatic to find static files
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
+#  Add configuration for static files storage using whitenoise
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-#Relative to base directory of AWS bucket.
-STATICFILES_LOCATION = 'static'
-MEDIAFILES_LOCATION = 'media'
+django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
 
-import adminportal.storage_backends
 
-STATICFILES_STORAGE = 'adminportal.storage_backends.StaticStorage'
-DEFAULT_FILE_STORAGE = 'adminportal.storage_backends.MediaStorage'
-
-"""
