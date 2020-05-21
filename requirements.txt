@@ -27,6 +27,7 @@ mysql-connector-python==8.0.18
 mysqlclient==1.4.6
 Pillow==7.1.2
 protobuf==3.11.2
+psycopg2
 PyMySQL==0.9.3
 python-dateutil==2.8.1
 python-dotenv==0.10.3
