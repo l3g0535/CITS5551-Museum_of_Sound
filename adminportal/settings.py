@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from os.path import join, dirname
 import django_heroku
-import dj_database_url
 
 
 # Needed to import API authentication codes from .env in root directory.
@@ -20,8 +19,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '!(q6v&qi3-w-ktcqx_vaf6b4*#lh46u07+6+-41$0vqc9y$#$e'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['http', 'sounds.arts.uwa.edu.au',
+                 '130.95.5.104', 'localhost', '127.0.0.1', '[::1]', '10.20.237.178']
 
 
 # Application definition
@@ -74,6 +74,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'adminportal.wsgi.application'
 
 # Database definition
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'localhost',
+        'NAME': 'mosdb',
+        'PASSWORD': 'a',
+        'USER': 'root',
+    }
+}
+'''
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
@@ -106,6 +117,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# MEDIA_URL = '/mediafiles/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
@@ -123,12 +142,7 @@ ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
 
-#Heroku Static File Storage
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/static/'
+PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
 
 # Extra lookup directories for collectstatic to find static files
 STATICFILES_DIRS = (
@@ -136,9 +150,6 @@ STATICFILES_DIRS = (
 )
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
-del DATABASES['default']['OPTIONS']['sslmode']
-
-
