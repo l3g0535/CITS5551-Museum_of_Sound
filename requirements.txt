@@ -7,6 +7,7 @@ chardet==3.0.4
 django-admin-tools==0.8.1
 django-cors-headers==3.2.1
 django-crispy-forms==1.9.0
+django-heroku
 django-storages==1.7.2
 djangorestframework==3.11.0
 docutils==0.15.2
