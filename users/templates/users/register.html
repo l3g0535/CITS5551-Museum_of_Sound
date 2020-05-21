@@ -8,7 +8,7 @@
   <!-- End Navbar -->
 <!-- ======= -->
 <!-- >>>>>>> 50f2511cc2d5600a2a1bc6328cdbccea83f32c11 -->
-  <div class="page-header header-filter" filter-color="orange">
+  <div class="page-header header-filter" filter-color="white">
     <div class="page-header-image" style="background-image:url(../static/images/login.jpg)"></div>
     <div class="content">
       <div class="container">
@@ -20,14 +20,13 @@
               {{form|crispy}}
             </fieldset>
             <div class='form-group'>
-              <button class='btn btn-outline-info' type='submit'>Sign Up</button>
+              <button class="btn btn-danger" type='submit'>Sign Up</button>
             </div>
           </form>
-          <div class = 'border-top pt-3'>
             <small class ='text-muted'>
               Already Have An Account?<a class='ml-2' href={% url 'login' %}>Sign in</a> here
             </small>
-          </div>
+
         </div>
       </div>
     </div>

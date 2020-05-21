@@ -13,12 +13,20 @@
           <div>
             <form id="searchform" maxlength="150" action="{% url 'search_tag' %}" method="get" accept-charset="utf-8">
               <div class="form-group">
-                <input type="text" class="form-control" name="title" autofocus placeholder="Search Title...">
+                <div class="text-left">
+                  <h5>Search titles:</h5>
+                </div>
+                <input type="text" class="form-control" name="title" autofocus placeholder="Search titles...">
               </div>
+              <br>
               <div class="form-group">
+                <div class="text-left">
+                  <h5>Search tags:</h5>
+                </div>
                 <input type="text" class="form-control" name="tag" autofocus placeholder="Search tags...">
               </div>
-              <input type="submit">
+              <input class="btn btn-danger" type="submit">
+
             </form>
           </div>
         </div>

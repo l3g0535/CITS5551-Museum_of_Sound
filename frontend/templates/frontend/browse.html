@@ -1,45 +1,36 @@
 {% extends 'frontend/base.html' %}
-{% load static %}
 {% block format %}
-  <div class="page-header header-filter" data-parallax="true" style="background-image: url({% static 'images/bg3.jpg' %});"></div>
-<div class="main main-raised">
+{% load static %}
+<div class="wrapper">
+<div class="contactus-1 section-image" style="background-image: url('../static/images/bg1.jpg')">
   <div class="container">
     <div class="row">
-      <div class="col md-6">
-          <div class="card">
-            <div class="card-header card-header-primary">
-              <div align="right">
-              {% if user.is_authenticated %}
-                  <h4 class="card-title" style="padding-right: 20px;">Hello {{ user.username }} <u>(<a href="{% url 'logout' %}">Log out</a>)</u></h4>
-              {% endif %}
-              </div>
-              <br>
-              <br>
-              <div class="text-center">
-                <h1 style="padding-left: 0px;">MoS<br>Museum of Sound</h1>
-                <h3 style="padding-left: 0px;">Collecting the Sounds that Shape Us</h3>
-              </div>
-              <br>
-              <br>
-            </div>
-
-            <br>
-            <br>
-            <br>
-
-            <div class="content container">
-
-              <div class="row">
-                <div class="col-md-8">
-                  {% block content %} {% endblock %}
-                </div>
-                <div class="col-md-4">
-                  <h2>Top Tags</h2>
-                  {% for tag in tags %}
-                  <a href="{% url 'tag' tag=tag.tag_content %}">{{tag.tag_content}}</a> {% endfor %}
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="col-md-15">
+        <h1 class="title text-left">Search results. . .</h1>
+      </div>
+    </div>
+  </div>
 </div>
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 ml-auto mr-auto">
+      <div class="col-md-pull-12">
+        <br>
+        <div class="row">
+          <div class="col-md-8">
+            {% block content %} {% endblock %}
+          </div>
+          <div>
+            <h2>Top Tags</h2>
+            {% for tag in tags %}
+            <a href="{% url 'tag' tag=tag.tag_content %}">{{tag.tag_content}}</a> {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
 {% endblock %}

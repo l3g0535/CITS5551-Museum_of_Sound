@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 from os.path import join, dirname
-import django_heroku
 import dj_database_url
 
 # Needed to import API authentication codes from .env in root directory.
@@ -80,13 +79,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
         'NAME': 'mosdb',
-        'PASSWORD': 'a',
-        'USER': 'root',
+        'PASSWORD': 'password',
+        'USER': 'admin',
     }
 }
 '''
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+#'''
 
 # Password validation
 
@@ -175,12 +175,3 @@ PROD_DIR = 'productions/'
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Extra lookup directories for collectstatic to find static files
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
-
-#  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-django_heroku.settings(locals())
