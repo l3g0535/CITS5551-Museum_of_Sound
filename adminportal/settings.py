@@ -73,7 +73,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'adminportal.wsgi.application'
 
 # Database definition
-'''
+''' 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
