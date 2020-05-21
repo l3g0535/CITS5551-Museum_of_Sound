@@ -1,0 +1,49 @@
+{% extends 'frontend/browse.html' %}
+{% block content %}
+
+<hr width="100%">
+    {% for sound in sounds %}
+    <div class="sound" style="margin-left: 20px; margin-right: 20px;">
+        <br>
+        <div class="card card-plain card-blog">
+                <div class="row">
+                    <div class="col-md-4">
+                    <div class="card-image">
+                      <img class="img img-raised rounded" src="{{ sound.image_file }}" />
+                    </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h3 class="card-title">
+                            <a href="{% url 'sound_detail' pk=sound.pk %}">{{ sound.title }}</a>
+                        </h3>
+                        <p class="card-description">{{ sound.description }}</p>
+                        <div class="row">
+                            <div class="author">
+                                <img src="assets/img/olivia.jpg" alt="..." class="avatar img-raised">
+                                <span>{{ sound.user_id }}</span>
+                            </div>
+                            <p>published: {{ sound.upload_time }}</p>
+                        </div>
+                        <p>{{ sound.audio_file_player }}</p>
+                    </div></div></div>
+    </div>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if sounds.has_previous %}
+            <a href="?page=1" class="page-link">&laquo; first</a>
+            <a href="?page={{ sounds.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ sounds.number }} of {{ sounds.paginator.num_pages }}.
+        </span>
+
+        {% if sounds.has_next %}
+            <a href="?page={{ sounds.next_page_number }}">next</a>
+            <a href="?page={{ sounds.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
