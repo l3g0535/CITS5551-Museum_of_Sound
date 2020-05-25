@@ -79,8 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
         'NAME': 'mosdb',
-        'PASSWORD': 'password',
-        'USER': 'admin',
+        'PASSWORD': 'asdasd123',
+        'USER': 'bleh',
     }
 }
 '''
@@ -171,4 +171,3 @@ STATICFILES_DIRS = (
 ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
-
