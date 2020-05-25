@@ -4,130 +4,34 @@
 
 <div class="wrapper">
 
-    <div class="page-header page-header-small">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('../static/images/bg1.jpg');">
-      </div>
-      <div class="content-center">
+
+  {% block tagnav %}
+   {% include "frontend/tagNavigation.html" %}
+  {% endblock %}
+  <div class="content-center">
         <div class="container">
-          <h3 class="title">What sounds are you looking for?</h3>
+          <h3 class="title">Looking for something more specific?</h3>
           <div>
             <form id="searchform" maxlength="150" action="{% url 'search_tag' %}" method="get" accept-charset="utf-8">
               <div class="form-group">
                 <div class="text-left">
                   <h5>Search titles:</h5>
                 </div>
-                <input type="text" class="form-control" name="title" autofocus placeholder="Search titles...">
+                <input type="text" class="form-control" name="title" placeholder="Search titles...">
               </div>
               <br>
               <div class="form-group">
                 <div class="text-left">
                   <h5>Search tags:</h5>
                 </div>
-                <input type="text" class="form-control" name="tag" autofocus placeholder="Search tags...">
+                <input type="text" class="form-control" name="tag" placeholder="Search tags...">
               </div>
-              <input class="btn btn-danger" type="submit">
+              <input class="btn btn-danger" type="submit" value="Search">
 
             </form>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="testimonials-1 section-image" style="background-image: url('../static/images/bg19.jpg')">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 ml-auto mr-auto text-center">
-            <h2 class="title">You might like:</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card card-testimonial">
-              <img class="card-img-top" src="../static/images/bg3.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-description">
-                </p>
-              </div>
-              <div class="card-footer">
-                <h4 class="card-title">#Nature</h4>
-                <p class="card-text">Wind, rustling leaves, crashing waves</p>
-                <a href="{% url 'tag' tag='Nature' %}" class="card-link">Browse Nature</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-testimonial">
-              <img class="card-img-top" src="../static/images/bg4.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-description">
-                </p>
-              </div>
-              <div class="card-footer">
-                <h4 class="card-title">#Shoal</h4>
-                <p class="card-text">Cold wind, water trickling, crashing waves</p>
-                <a href="{% url 'tag' tag='Shoal' %}" class="card-link">Browse Shoal</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-testimonial">
-              <img class="card-img-top" src="../static/images/bg5.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-description">
-                </p>
-              </div>
-              <div class="card-footer">
-                <h4 class="card-title">#Dusk</h4>
-                <p class="card-text">Birds chirping, rustling leaves, calm wind</p>
-                <a href="{% url 'tag' tag='Dusk' %}" class="card-link">Browse Dusk</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-testimonial">
-              <img class="card-img-top" src="../static/images/bg6.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-description">
-                </p>
-              </div>
-              <div class="card-footer">
-                <h4 class="card-title">#Hall</h4>
-                <p class="card-text">Echoes, choir singing, steps on wood floor</p>
-                <a href="{% url 'tag' tag='Hall' %}" class="card-link">Browse Hall</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-testimonial">
-              <img class="card-img-top" src="../static/images/bg1.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-description">
-                </p>
-              </div>
-              <div class="card-footer">
-                <h4 class="card-title">#Animals</h4>
-                <p class="card-text">Barking dogs, grazing cows, flying birds</p>
-                <a href="{% url 'tag' tag='Animals' %}" class="card-link">Browse Animals</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-testimonial">
-              <img class="card-img-top" src="../static/images/bg21.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-description">
-                </p>
-              </div>
-              <div class="card-footer">
-                <h4 class="card-title">#Urban</h4>
-                <p class="card-text">Footsteps, doors slamming, coffee brewing</p>
-                <a href="{% url 'tag' tag='Urban' %}" class="card-link">Browse Urban</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 </div>
 
