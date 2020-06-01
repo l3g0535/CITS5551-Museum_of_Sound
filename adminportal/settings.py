@@ -20,7 +20,7 @@ SECRET_KEY = '!(q6v&qi3-w-ktcqx_vaf6b4*#lh46u07+6+-41$0vqc9y$#$e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = ['http', 'https', 'sounds.arts.uwa.edu.au',
-                 '130.95.5.104', 'localhost', '127.0.0.1', '[::1]', '10.20.237.178', 'museum-of-sound.herokuapp.com']
+                 '130.95.5.104', 'localhost', '127.0.0.1', '[::1]', '10.20.237.178', 'museum-of-sound.herokuapp.com', 'uwamos.herokuapp.com']
 
 
 # Application definition
@@ -73,7 +73,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'adminportal.wsgi.application'
 
 # Database definition
-#'''
+# '''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -161,7 +161,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files (CSS, JavaScript, Images)
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 '''
 STATICFILES_DIRS = (
