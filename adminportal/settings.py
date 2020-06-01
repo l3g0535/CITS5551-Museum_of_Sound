@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from os.path import join, dirname
 import dj_database_url
-
+import django_heroku
 # Needed to import API authentication codes from .env in root directory.
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -171,3 +171,4 @@ STATICFILES_DIRS = (
 ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
+django_heroku.settings(locals())
