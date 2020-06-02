@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # DEVELOPMENT SETTINGS
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!(q6v&qi3-w-ktcqx_vaf6b4*#lh46u07+6+-41$0vqc9y$#$e'
+SECRET_KEY = "f8fd335675f939df3ae3e59dc53895b4f9dcbe017f002210"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = ['http', 'https', 'sounds.arts.uwa.edu.au',
@@ -172,3 +172,16 @@ ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
 django_heroku.settings(locals())
+
+# AWS S3 BUCKET INFORMATION
+AWS_ACCESS_KEY_ID = 'AKIAQP246I4X24QXT3TW'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'museumofsound-files'
+
+# EMAIL INFORMATION FOR RESET PASSWORD
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'museumofsounduwa@gmail.com'
+EMAIL_HOST_PASSWORD = 'Asdasd`12'
