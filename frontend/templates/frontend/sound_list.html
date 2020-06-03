@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-4">
                     <div class="card-image">
-                      <img class="img img-raised rounded" src="{{ sound.image_file }}" />
+                      <img class="img img-raised rounded" src="{{ sound.image_file.url }}" />
                     </div>
                     </div>
                     <div class="col-md-8">
@@ -17,10 +17,9 @@
                             <a href="{% url 'sound_detail' pk=sound.pk %}">{{ sound.title }}</a>
                         </h3>
                         <p class="card-description">{{ sound.description }}</p>
-                        <div class="row">
+                        <div class="row">   
                             <div class="author">
-                                <img src="assets/img/olivia.jpg" alt="..." class="avatar img-raised">
-                                <span>{{ sound.user_id }}</span>
+                                <img src="{{  user.profile.image.url  }}" alt="..." class="avatar img-raised">
                             </div>
                             <p>published: {{ sound.upload_time }}</p>
                         </div>
