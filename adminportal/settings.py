@@ -180,6 +180,11 @@ AWS_ACCESS_KEY_ID = 'AKIAQP246I4X24QXT3TW'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'museumofsound-files'
 
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 # EMAIL INFORMATION FOR RESET PASSWORD
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

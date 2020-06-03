@@ -3,8 +3,7 @@
 {% load static %}
 
 <div class="wrapper">
-    <div class="page-header clear-filter" filter-color="orange">
-
+    <div class="page-header dark-overlay">
       <div class="page-header-image" data-parallax="true" style="background-image: url('../static/images/mosuwa.jpg');"></div>
       <div class="container">
         <div class="content-center brand">
@@ -13,8 +12,7 @@
           <div class="col-md-10 ml-auto mr-auto text-center">
             <h4 class="description">Sounds shape the way we feel and see the world, yet we don't often stop and listen. <br />
               The Museum of Sound allows you to share the sounds you hear and tell the stories that come with them.</h4>
-            <button class="btn btn-danger btn-round" type="button">
-              <i class="now-ui-icons ic_mic_48px"></i> Record Your Sound </button>
+            <a class="btn btn-danger btn-round" href="{% url 'user_record' %}">Record Your Sound </a>
             <br>
             <h5>Connect with us on:</h5>
             <a href="" class="btn btn-icon btn-round">
