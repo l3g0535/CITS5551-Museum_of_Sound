@@ -21,11 +21,6 @@
           <div class="col-md-8">
             {% block content %} {% endblock %}
           </div>
-          <div>
-            <h2>Top Tags</h2>
-            {% for tag in tags %}
-            <a href="{% url 'tag' tag=tag.tag_content %}">{{tag.tag_content}}</a> {% endfor %}
-          </div>
         </div>
       </div>
     </div>
