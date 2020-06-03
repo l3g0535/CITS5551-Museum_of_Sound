@@ -142,7 +142,7 @@ def sound_upload(request):
             print('valid post')
             upload = UserSound()
             upload.description = form.cleaned_data['description']
-            # upload.title = request.POST['title']
+            upload.title = form.cleaned_dataT['title']
             upload.upload_time = timezone.now()
             upload.audio_file.name = handle_upload(
                 settings.SOUND_DIR, form.cleaned_data['audio_file'])
