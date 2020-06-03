@@ -142,12 +142,10 @@ def sound_upload(request):
             print('valid post')
             upload = UserSound()
             upload.description = form.cleaned_data['description']
+            upload.title = request.POST['title']
             upload.upload_time = timezone.now()
             upload.audio_file.name = handle_upload(
                 settings.SOUND_DIR, form.cleaned_data['audio_file'])
-            print(upload.sound_id)
-            print(upload.is_approved)
-            print(upload.audio_file)
             upload.save()
             print('upload worked')
             return render(request, 'frontend/verification.html', {'production': upload, 'title': 'Upload a sound'})
