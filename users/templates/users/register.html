@@ -12,11 +12,11 @@
     <div class="page-header-image" style="background-image:url(../static/images/login.jpg)"></div>
     <div class="content">
       <div class="container">
-        <div class="col-md-5 ml-auto mr-auto">
+        <div class="col-md-5 ml-auto mr-auto" style="background:#333333cc">
           <form method = 'POST'>
             {% csrf_token %}
             <fieldset class = 'form-group'>
-              <legend class = 'border-bottom mb-4'>Join Today</legend>
+              <legend class = 'border-bottom mb-4'>Join Today!</legend>
               {{form|crispy}}
             </fieldset>
             <div class='form-group'>
