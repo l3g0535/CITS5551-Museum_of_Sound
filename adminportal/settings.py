@@ -165,15 +165,15 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 
 
 ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 # AWS S3 BUCKET INFORMATION
 AWS_ACCESS_KEY_ID = 'AKIAQP246I4X24QXT3TW'
