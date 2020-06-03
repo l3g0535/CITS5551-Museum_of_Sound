@@ -173,7 +173,7 @@ STATICFILES_DIRS = (
 ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 # AWS S3 BUCKET INFORMATION
 AWS_ACCESS_KEY_ID = 'AKIAQP246I4X24QXT3TW'
