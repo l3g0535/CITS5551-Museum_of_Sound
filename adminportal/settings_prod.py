@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from os.path import join, dirname
-import django_heroku
+#import django_heroku
 import dj_database_url
 
 

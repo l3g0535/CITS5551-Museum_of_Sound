@@ -64,7 +64,7 @@ def sound_detail(request, pk):
 
 def tag_filter(request, tag):
     if not Tag.objects.filter(tag_content=tag).exists():
-        raise Http404("Tag doesn't exist.")
+        return render(request, 'frontend/empty_search.html', {'tags': tags})
     tags = get_tags()
     sounds = UserSound.objects.filter(tag__tag_content=tag, is_approved="Y")
     return render(request, 'frontend/sound_list.html', {'sounds': sounds, 'tags': tags})
