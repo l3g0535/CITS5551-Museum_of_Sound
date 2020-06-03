@@ -33,7 +33,8 @@ class UserSound(models.Model):
     sound_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.SET_DEFAULT,
                              default="", blank=True, null=True)
-    image_file = models.FileField(null=True)
+    image_file = models.FileField(
+        null=True, default='', upload_to='sound_images')
     title = models.CharField(max_length=50, default='')
     upload_time = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True, null=True)
@@ -46,7 +47,7 @@ class UserSound(models.Model):
     def audio_file_player(self):
         """audio player tag for admin"""
         if self.audio_file:
-            player_string = '<audio preload="metadata" controls><source src="%s">Your browser does not support the audio element.</audio>' % (
+            player_string = '<audio preload="metadata" controls><source src="sound/%s">Your browser does not support the audio element.</audio>' % (
                 self.audio_file.url)
             return mark_safe(player_string)
 

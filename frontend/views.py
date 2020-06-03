@@ -147,22 +147,22 @@ def sound_upload(request):
             upload.audio_file.name = handle_upload(
                 settings.SOUND_DIR, form.cleaned_data['audio_file'])
             upload.save()
-            # tags = request.POST['tags']
-            # if ',' in tags:
-            #     tags = tags.split(',')
-            #     for tt in tags:
-            #         tag = Tag()
-            #         tag.sound_id = upload
-            #         print(tt)
-            #         tag.tag_content = tt
-            #         tag.save()
-            #         print('saved')
-            # else:
-            #     tag = Tag()
-            #     tag.sound_id = upload
-            #     tag.tag_content = tags
-            #     tag.save()
-            # print('upload worked')
+            tags = request.POST['tags']
+            if ',' in tags:
+                tags = tags.split(',')
+                for tt in tags:
+                    tag = Tag()
+                    tag.sound_id = upload
+                    print(tt)
+                    tag.tag_content = tt
+                    tag.save()
+                    print('saved')
+            else:
+                tag = Tag()
+                tag.sound_id = upload
+                tag.tag_content = tags
+                tag.save()
+            print('upload worked')
             return render(request, 'frontend/verification.html', {'production': upload, 'title': 'Upload a sound'})
     else:
         form = UploadSoundForm()
