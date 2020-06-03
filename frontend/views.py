@@ -130,7 +130,7 @@ def handle_upload(root, file):
     with default_storage.open(filename, 'wb+') as destination:
         for chunk in file.chunks():
             destination.write(chunk)
-    return sound+file_ext
+    return root+sound+file_ext
 
 
 def sound_upload(request):

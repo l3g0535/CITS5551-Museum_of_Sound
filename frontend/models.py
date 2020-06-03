@@ -47,7 +47,7 @@ class UserSound(models.Model):
     def audio_file_player(self):
         """audio player tag for admin"""
         if self.audio_file:
-            player_string = '<audio preload="metadata" controls><source src="sound/%s">Your browser does not support the audio element.</audio>' % (
+            player_string = '<audio preload="metadata" controls><source src="/%s">Your browser does not support the audio element.</audio>' % (
                 self.audio_file.url)
             return mark_safe(player_string)
 
