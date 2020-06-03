@@ -33,8 +33,8 @@ class UserSound(models.Model):
     sound_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.SET_DEFAULT,
                              default="", blank=True, null=True)
-    image_file = models.FileField(
-        null=True, default='', upload_to='sound_images')
+    image_file = models.ImageField(
+        null=True, default='default.png', upload_to='sound_images')
     title = models.CharField(max_length=50, default='')
     upload_time = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True, null=True)
