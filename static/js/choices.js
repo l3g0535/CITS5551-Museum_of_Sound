@@ -5,12 +5,12 @@ var multi = new SelectPure(".select-tag", {
       value: "Nature",
     },
     {
-      label: "Shoal",
-      value: "Shoal",
+      label: "Beach",
+      value: "Beach",
     },
     {
-      label: "Dusk",
-      value: "Dusk",
+      label: "People",
+      value: "People",
     },
     {
       label: "Hall",
