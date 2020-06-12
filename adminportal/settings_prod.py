@@ -1,8 +1,10 @@
 import os
 from dotenv import load_dotenv
 from os.path import join, dirname
-import dj_database_url
 import django_heroku
+import dj_database_url
+
+
 # Needed to import API authentication codes from .env in root directory.
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -16,10 +18,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # DEVELOPMENT SETTINGS
 # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = '!(q6v&qi3-w-ktcqx_vaf6b4*#lh46u07+6+-41$0vqc9y$#$e'
 SECRET_KEY = "f8fd335675f939df3ae3e59dc53895b4f9dcbe017f002210"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['https', 'sounds.arts.uwa.edu.au', 'uwamos.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -72,20 +75,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'adminportal.wsgi.application'
 
 # Database definition
-# '''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'NAME': 'mosdb',
-        'PASSWORD': 'asdasd123',
-        'USER': 'root',
-    }
-}
-'''
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-#'''
 
 # Password validation
 
@@ -115,9 +106,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-# MEDIA_URL = '/mediafiles/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGGING = {
@@ -153,27 +141,35 @@ LOGGING = {
     }
 }
 DEBUG_PROPAGATE_EXCEPTIONS = True
-LOGIN_URL = '/login/'
+
+LOGIN_URL = 'login'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Static files (CSS, JavaScript, Images)
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-STATIC_URL = '/static/'
 
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 
 ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
-django_heroku.settings(locals())
+
+# Static files (CSS, JavaScript, Images)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+
+
+# Extra lookup directories for collectstatic to find static files
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
+#  Add configuration for static files storage using whitenoise
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # AWS S3 BUCKET INFORMATION
 AWS_ACCESS_KEY_ID = 'AKIAQP246I4X24QXT3TW'
@@ -183,7 +179,7 @@ AWS_STORAGE_BUCKET_NAME = 'museumofsound-files'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # EMAIL INFORMATION FOR RESET PASSWORD
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -192,3 +188,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'museumofsounduwa@gmail.com'
 EMAIL_HOST_PASSWORD = 'Asdasd`12'
+
+django_heroku.settings(locals())
