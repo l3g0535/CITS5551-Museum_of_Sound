@@ -29,7 +29,7 @@ class UploadProductionForm(forms.Form):
 class UploadSoundForm(forms.ModelForm):
     class Meta:
         model = UserSound
-        fields = ['description', 'audio_file', 'title']
+        fields = ['description', 'audio_file', 'title', 'location']
 
     def clean(self):
         cleaned_data = super(UploadSoundForm, self).clean()

@@ -40,25 +40,30 @@
                       <div class="card-header text-center">
                     <h4 class="card-title"></h4>
                   </div>
+
                       <div class="card-body">
-                      <div class="form-group">
-                          <label for="title">Title</label>
-                            <textarea class="form-control" id="id_title" required name = "title"rows="1" maxlength="25"></textarea><br>
-                          <label for="desc" class="bmd-label-static">Description (max. 255 characters)</label>
-                            <textarea type="text" class="form-control" maxlength="255" required id="id_description" rows="3" name = "description" cols="100"></textarea>
-                            <br>
-                          <label for="tags">Tags</label>
-                      {% comment %} <textarea class="form-control" id="tags" rows="1" maxlength="50"></textarea> {% endcomment %}
-                          <span class="select-tag"></span>
-                      </div>
-                      <br>
                       {{ form.audio_file }}
 
                       <br>
+                      <div class="form-group">
+
                       <br>
+                          <label for="title">Title</label>
+                            <textarea class="form-control" id="id_title" required name = "title"rows="1" maxlength="25"></textarea><br>
+                          <label for="desc" class="bmd-label-static">Description (max. 255 characters)</label>
+                            <textarea type="text" class="form-control" maxlength="255" required id="id_description" rows="3" name = "description" cols="100" placeholder="Describe what this sound means to you..."></textarea>
+                            <br>
+                          <label for="taglist">Tags</label>
+                      {% comment %} <textarea class="form-control" id="id_taglist" name ="taglist" rows="1" maxlength="50"></textarea> {% endcomment %}
+                          <span class="select-tag"></span>
+                          <br>
+                          <label for="location">Location</label>
+                          <textarea class="form-control" id="id_location" name= "location" rows="1" maxlength="50"></textarea>
+                          <br>
+                      </div>
 
                       <button type="submit" class="save btn btn-default">Upload file</button>
-
+                      </div>
                   </form></label>
           </div>
         </div>
@@ -70,7 +75,6 @@
 <script src="{% static 'js/choices.js' %}"></script>
 <script>
   var tags = multi.value();
-  print(tags);
 
   var fd = new FormData();
   fd.append("tags", tags);
