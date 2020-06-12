@@ -193,3 +193,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'museumofsounduwa@gmail.com'
 EMAIL_HOST_PASSWORD = 'Asdasd`12'
+
+MAX_UPLOAD_SIZE = "10485760"
