@@ -5,7 +5,7 @@ from django.db import models
 
 # Create your models here.
 from django.contrib import admin
-from frontend.models import UserSound, Production
+from frontend.models import UserSound, Production, Tag
 import os
 
 # Register your models here.
@@ -34,6 +34,9 @@ class SoundsAdmin(admin.ModelAdmin):
     actions = [mark_approved]
 
 
+@admin.register(Tag)
+class Tagadmin(admin.ModelAdmin):
+    list_display = ['sound_id', 'tag_content']
 # class ImportAdmin(admin.ModelAdmin):
 #     change_list_template = 'admin/frontend/UserSound/change_list.html'
 

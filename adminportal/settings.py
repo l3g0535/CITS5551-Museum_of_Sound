@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "f8fd335675f939df3ae3e59dc53895b4f9dcbe017f002210"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['https', 'sounds.arts.uwa.edu.au', 'uwamos.herokuapp.com']
+ALLOWED_HOSTS = ['https', 'uwamos.herokuapp.com']
 
 
 # Application definition
@@ -172,6 +172,7 @@ STATICFILES_DIRS = (
 
 ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
+SOUND_IMAGES_DIR = 'sound_images'
 PROD_DIR = 'productions/'
 django_heroku.settings(locals())
 

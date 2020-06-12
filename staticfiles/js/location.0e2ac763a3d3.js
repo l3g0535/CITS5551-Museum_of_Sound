@@ -1,5 +1,6 @@
-var loc_field = document.getElementById("location");
+
 function getLocation() {
+    var loc_field = document.getElementById("location");
   if (navigator.geolocation) {
   console.log('processing');
     navigator.geolocation.getCurrentPosition(showPosition);

@@ -160,6 +160,7 @@ function sendRecording() {
   var location = document.getElementById("location").value;
   var title = document.getElementById("title").value;
   var tags = multi.value();
+  var image = document.getElementById("image");
   // var tags = document.getElementById("tag").value;
 
   if (descrip == "") {
@@ -183,6 +184,7 @@ function sendRecording() {
     fd.append("tags", tags);
     fd.append("sound", send_blob);
     fd.append("title", title);
+    fd.append("image", image);
     $.ajax({
       type: "POST",
       url: "/sound/record",

@@ -131,7 +131,15 @@ def handle_upload(root, file):
     with default_storage.open(filename, 'wb+') as destination:
         for chunk in file.chunks():
             destination.write(chunk)
-    return root+sound+file_ext
+    return filename
+
+
+def image_handle_upload(root, file):
+    filename = root + file
+    with default_storage.open(filename, 'wb+') as destination:
+        for chunk in file.chunks():
+            destination.write(chunk)
+    return filename
 
 
 def sound_upload(request):
@@ -149,6 +157,8 @@ def sound_upload(request):
             upload.location = request.POST['location']
             upload.audio_file.name = handle_upload(
                 settings.SOUND_DIR, form.cleaned_data['audio_file'])
+            upload.image_file = image_handle_upload(
+                settings.SOUND_IMAGES_DIR, form.cleaned_data['image_file'])
             upload.save()
             print('upload worked')
             return render(request, 'frontend/verification.html', {'production': upload, 'title': 'Upload a sound'})
@@ -166,8 +176,9 @@ def user_record(request):
         try:
             tags = request.POST['tags']
             uploaded_file = request.FILES['sound']
+            uploaded_image = request.FILES['image']
             print(uploaded_file)
-            print(tags)
+            print(uploaded_image)
             upload = UserSound()
             upload.upload_time = timezone.now()
             upload.description = request.POST['descrip']
@@ -175,6 +186,7 @@ def user_record(request):
             upload.location = request.POST['location']
             upload.audio_file.name = handle_upload(
                 settings.SOUND_DIR, uploaded_file)
+            upload.image_file = request.FILES['image']
             upload.save()
             if ',' in tags:
                 tags = tags.split(',')
