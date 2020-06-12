@@ -8,12 +8,16 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
-class UploadProductionForm(forms.Form):
-    prod_title = forms.CharField(
-        widget=forms.Textarea(attrs={'cols': 30, 'rows': 1}))
-    prod_description = forms.CharField(
-        widget=forms.Textarea(attrs={'cols': 30, 'rows': 10}))
-    audio_file = forms.FileField()
+class UploadProductionForm(forms.ModelForm):
+
+    class Meta:
+        model = Production
+        fields = ['prod_title', 'audio_file', 'prod_description', ]
+    # prod_title = forms.CharField(
+    #     widget=forms.Textarea(attrs={'cols': 30, 'rows': 1}))
+    # prod_description = forms.CharField(
+    #     widget=forms.Textarea(attrs={'cols': 30, 'rows': 10}))
+    # audio_file = forms.FileField()
 
     def clean(self):
         cleaned_data = super(UploadProductionForm, self).clean()

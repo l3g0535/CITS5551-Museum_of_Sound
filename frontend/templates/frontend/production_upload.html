@@ -36,33 +36,32 @@
       <div class="col-md-5 ml-auto mr-auto">
         <div class="card card-contact card-raised">
           <label for="desc">
-        <form method="POST" enctype="multipart/form-data" class="upload-form">{% csrf_token %}
-             <div class="card-header text-center">
-                    <h4 class="card-title"></h4><br>
-                  </div>
-        <div class="col">
-            <div class="form-group">
-                <label for="id_prod_title" class="bmd-label-static">Title</label>
-                <textarea class="form-control" id="id_prod_title" rows="1" maxlength="25"></textarea><br>
-                <!--<input type="text" class="form-control" id="id_prod_title" name="prod_title"><br>-->
-            </div>
-            <div class="form-group">
-                <label for="id_prod_description" class="bmd-label-static">Description (max. 255 characters)</label>
-                <textarea type="text" class="form-control" maxlength="255" id="id_prod_description" name="prod_description" rows="3" cols="100"></textarea><br>
-            </div>
-            <div class="form-group">
-            <label for="tags">Tags</label>
-                      {% comment %} <textarea class="form-control" id="tags" rows="1" maxlength="50"></textarea> {% endcomment %}
-                       <span class="select-tag"></span>
-                <br>
-                      </div>
-                {{ form.audio_file }}
-            <button type="submit" class="save btn btn-default">Upload file</button><br>
-            </div>
-        </div>
-      </div>
-    </div>
+                <form method="POST" enctype="multipart/form-data" class="upload-form">{% csrf_token %}
+                     <div class="card-header text-center">
+                      <h4 class="card-title"></h4><br>
+                    </div>
+                 <div class="card-body">
+                      {{ form.audio_file }}
 
+                      <br>
+                      <div class="form-group">
+
+                      <br>
+                          <label for="prod_title">Title</label>
+                            <textarea class="form-control" id="prod_title" required name = "prod_title"rows="1" maxlength="50"></textarea><br>
+                          <label for="prod_description" class="bmd-label-static">Description (max. 255 characters)</label>
+                            <textarea type="text" class="form-control" maxlength="255" required id="prod_description" rows="3" name = "prod_description" cols="100" placeholder="Describe what this sound means to you..."></textarea>
+                            <br>
+                          {% comment %} <label for="taglist">Tags</label>
+                          <span class="select-tag"></span> {% endcomment %}
+                      {% comment %} <textarea class="form-control" id="id_taglist" name ="taglist" rows="1" maxlength="50"></textarea> {% endcomment %}
+                      </div>
+                
+                    <button type="submit" class="save btn btn-default">Upload file</button><br>
+                  </div>
+              </div>
+            </div>
+          </div>
         </form>
           </label>
       </div>

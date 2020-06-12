@@ -106,6 +106,7 @@ def search(request):
 def upload_production(request):
     if request.method == "POST":
         form = UploadProductionForm(request.POST, request.FILES)
+        print(form.is_valid())
         if form.is_valid():
             upload = Production()
             upload.upload_time = timezone.now()

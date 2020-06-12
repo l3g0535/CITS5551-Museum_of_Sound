@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from os.path import join, dirname
 import dj_database_url
-#import django_heroku
+import django_heroku
 # Needed to import API authentication codes from .env in root directory.
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -79,8 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
         'NAME': 'mosdb',
-        'PASSWORD': 'password',
-        'USER': 'admin',
+        'PASSWORD': 'asdasd123',
+        'USER': 'root',
     }
 }
 '''
@@ -161,20 +161,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files (CSS, JavaScript, Images)
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
 
-'''
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-'''
+
 
 ADMIN_MEDIA_PREFIX = ''
 SOUND_DIR = 'sounds/'
 PROD_DIR = 'productions/'
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 # AWS S3 BUCKET INFORMATION
 AWS_ACCESS_KEY_ID = 'AKIAQP246I4X24QXT3TW'
@@ -184,7 +184,7 @@ AWS_STORAGE_BUCKET_NAME = 'museumofsound-files'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # EMAIL INFORMATION FOR RESET PASSWORD
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
