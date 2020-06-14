@@ -26,9 +26,9 @@ class UploadProductionForm(forms.ModelForm):
         if file:
             if not os.path.splitext(file.name)[1] in [".mp3", ".wav", ".aac", ".flac"]:
                 raise ValidationError("Not an audio file.")
-            if file._size > settings.MAX_UPLOAD_SIZE:
-                raise forms.ValidationError(_('Please keep filesize under %s. Current filesize %s') % (
-                    filesizeformat(settings.MAX_UPLOAD_SIZE), filesizeformat(file._size)))
+            # if file._size > settings.MAX_UPLOAD_SIZE:
+            #     raise forms.ValidationError(_('Please keep filesize under %s. Current filesize %s') % (
+                # filesizeformat(settings.MAX_UPLOAD_SIZE), filesizeformat(file._size)))
         else:
             raise ValidationError("Couldn't read uploaded file")
         return cleaned_data
@@ -46,9 +46,9 @@ class UploadSoundForm(forms.ModelForm):
         if file:
             if not os.path.splitext(file.name)[1] in [".MP3", ".mp3", ".wav", ".aac", ".flac"]:
                 raise ValidationError("Not an audio file.")
-            if file._size > settings.MAX_UPLOAD_SIZE:
-                raise forms.ValidationError(_('Please keep filesize under %s. Current filesize %s') % (
-                    filesizeformat(settings.MAX_UPLOAD_SIZE), filesizeformat(file._size)))
+            # if file._size > settings.MAX_UPLOAD_SIZE:
+            #     raise forms.ValidationError(_('Please keep filesize under %s. Current filesize %s') % (
+            #         filesizeformat(settings.MAX_UPLOAD_SIZE), filesizeformat(file._size)))
         else:
             raise ValidationError("Couldn't read uploaded file")
         return cleaned_data
