@@ -157,8 +157,8 @@ def sound_upload(request):
             upload.location = request.POST['location']
             upload.audio_file.name = handle_upload(
                 settings.SOUND_DIR, form.cleaned_data['audio_file'])
-            upload.image_file = image_handle_upload(
-                settings.SOUND_IMAGES_DIR, form.cleaned_data['image_file'])
+            # upload.image_file = image_handle_upload(
+            #     settings.SOUND_IMAGES_DIR, form.cleaned_data['image_file'])
             upload.save()
             print('upload worked')
             return render(request, 'frontend/verification.html', {'production': upload, 'title': 'Upload a sound'})
@@ -176,9 +176,9 @@ def user_record(request):
         try:
             tags = request.POST['tags']
             uploaded_file = request.FILES['sound']
-            uploaded_image = request.FILES['image']
-            print(uploaded_file)
-            print(uploaded_image)
+            # uploaded_image = request.FILES['image']
+            # print(uploaded_file)
+            # print(uploaded_image)
             upload = UserSound()
             upload.upload_time = timezone.now()
             upload.description = request.POST['descrip']
@@ -186,7 +186,7 @@ def user_record(request):
             upload.location = request.POST['location']
             upload.audio_file.name = handle_upload(
                 settings.SOUND_DIR, uploaded_file)
-            upload.image_file = request.FILES['image']
+            # upload.image_file = request.FILES['image']
             upload.save()
             if ',' in tags:
                 tags = tags.split(',')
