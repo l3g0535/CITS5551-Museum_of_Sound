@@ -160,7 +160,8 @@ function sendRecording() {
   var location = document.getElementById("location").value;
   var title = document.getElementById("title").value;
   var tags = multi.value();
-  var image = document.getElementById("image");
+  const image = document.getElementById("image").files[0];
+  console.log("I am here");
   // var tags = document.getElementById("tag").value;
 
   if (descrip == "") {
