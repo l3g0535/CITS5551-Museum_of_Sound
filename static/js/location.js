@@ -15,7 +15,7 @@ function showPosition(pos) {
      let long = pos.coords.longitude;
      $("input[name='lat']").val(lat);
      $("input[name='lat']").val(long);
-     let url_str = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+long+'&key=AIzaSyC4pppaQX9oFbQIj4lY0gMLDXzq1Ym-jn4'
+     let url_str = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+long+'&key='
     $.getJSON(url_str, function(data) {
           var res = '';
           for (index = 0; index < data['results'].length; ++index) {
