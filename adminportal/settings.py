@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "f8fd335675f939df3ae3e59dc53895b4f9dcbe017f002210"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['https', 'uwamos.herokuapp.com']
+ALLOWED_HOSTS = ['https', 'https://uwamos.herokuapp.com']
 
 
 # Application definition
