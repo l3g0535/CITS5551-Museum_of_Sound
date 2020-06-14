@@ -18,19 +18,19 @@ class TestModels:
         Profile = mixer.blend('users.Profile', user = '')
         assert Profile.user == ''
 
-    def test_Profile_Title(models.Model):
+    def test_Profile_image(models.Model):
         Profile = mixer.blend('users.Profile', image = 'test1.png')
         assert Profile.image == 'test1.png'
         
-    def test_Profile_Title(models.Model):
+    def test_Profile_image(models.Model):
         Profile = mixer.blend('users.Profile', image = 'test1.jpg')
         assert Profile.image == 'test1.jpg'
         
-    def test_Profile_Title(models.Model):
+    def test_Profile_image(models.Model):
         Profile = mixer.blend('users.Profile', image = 'test1.mp3')
         assert Profile.image == 'test1.mp3'
         
-    def test_Profile_Title(models.Model):
+    def test_Profile_image(models.Model):
         Profile = mixer.blend('users.Profile', image = 'test1.wav')
         assert Profile.image == 'test1.wav'
         
