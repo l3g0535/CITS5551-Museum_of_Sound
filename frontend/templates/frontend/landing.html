@@ -72,6 +72,9 @@
   {% block tagnav %}
    {% include "frontend/tagNavigation.html" %}
   {% endblock %}
+    {% if user.is_authenticated %}
+    
+{% else %}
     <div class="section section-contact-us text-center">
       <div class="container">
         <h2 class="title">Join us</h2>
@@ -86,5 +89,5 @@
       </div>
     </div>
   </div>
-
+{% endif %}
 {% endblock %}
